@@ -69,13 +69,13 @@
                 <form id="loginForm" class="auth-form" novalidate>
                     <div class="form-group">
                         <label for="loginCredential">Email/ Số điện thoại</label>
-                        <input type="text" id="loginCredential" name="loginCredential" placeholder="Nhập email hoặc số điện thoại" required>
+                        <input type="text" id="loginCredential" name="loginCredential" placeholder="Nhập email hoặc số điện thoại" required value="test@example.com"> <!-- Thêm value mẫu -->
                         <div class="form-error-message"></div>
                     </div>
                     <div class="form-group">
                         <label for="loginPassword">Mật khẩu</label>
                         <div class="password-input-wrapper">
-                            <input type="password" id="loginPassword" name="loginPassword" placeholder="Nhập mật khẩu" required>
+                            <input type="password" id="loginPassword" name="loginPassword" placeholder="Nhập mật khẩu" required value="password123"> <!-- Thêm value mẫu -->
                             <span class="toggle-password-visibility"><i class="fas fa-eye"></i></span>
                         </div>
                         <div class="form-error-message"></div>
@@ -147,5 +147,35 @@
     <!-- End Footer Section -->
 
     <script src="js/script.js"></script>
+    <script>
+        // Script riêng cho trang đăng nhập để giả lập login
+        document.addEventListener('DOMContentLoaded', function() {
+            const loginForm = document.getElementById('loginForm');
+            if (loginForm) {
+                loginForm.addEventListener('submit', function(event) {
+                    // Ngăn chặn submit form thực sự để JS xử lý
+                    // event.preventDefault(); // Bỏ comment nếu hàm validateForm trong script.js không có preventDefault
+
+                    // Giả sử validate thành công (trong thực tế sẽ kiểm tra với backend)
+                    const credential = document.getElementById('loginCredential').value;
+                    const password = document.getElementById('loginPassword').value;
+
+                    // Kiểm tra đơn giản (bạn sẽ thay thế bằng logic thực tế)
+                    if (credential.trim() !== '' && password.trim() !== '') {
+                        // Lưu thông tin người dùng đã đăng nhập vào localStorage
+                        const user = {
+                            name: "Người Dùng Test", // Lấy tên thật từ backend
+                            avatar: "img/avatar-placeholder.png" // Lấy avatar thật
+                        };
+                        localStorage.setItem('loggedInUser', JSON.stringify(user));
+                        alert('Đăng nhập thành công!');
+                        window.location.href = 'index.html'; // Chuyển hướng về trang chủ
+                    } else {
+                        // alert('Vui lòng nhập đầy đủ thông tin.'); // Hàm validateForm trong script.js sẽ xử lý
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 </html>
