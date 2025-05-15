@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thanh toán - The Zoo Shop</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/thanhtoan.css">
+</head>
+<body>
+    <!-- Header Section (Sẽ được cập nhật sau để hiển thị avatar) -->
+    <header class="site-header">
+        <div class="header-top">
+            <div class="container">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="img/zoo_logo.png" alt="The Zoo Shop Logo">
+                    </a>
+                </div>
+                <div class="search-container">
+                    <form action="/search" method="get" class="search-form">
+                        <input type="text" name="q" placeholder="Bạn cần tìm gì...">
+                        <button type="submit"><i class="fas fa-search"></i> Tìm kiếm</button>
+                    </form>
+                </div>
+                <div class="header-top-actions">
+                    <!-- Nút Đăng nhập/Avatar sẽ được quản lý bằng JavaScript -->
+                    <a href="dangnhap.html" class="header-action-btn" id="loginBtnHeader">
+                        <i class="fas fa-sign-in-alt"></i>
+                        <span>Đăng nhập</span>
+                    </a>
+                    <div class="user-avatar-header" id="userAvatarHeader" style="display: none;">
+                        <img src="img/avatar-placeholder.png" alt="User Avatar" id="headerUserAvatarImg">
+                        <ul class="user-dropdown-menu">
+                            <li><a href="thongtinnguoidung.html">Tài khoản của tôi</a></li>
+                            <li><a href="#">Đơn hàng</a></li>
+                            <li><a href="#" id="logoutBtnHeader">Đăng xuất</a></li>
+                        </ul>
+                    </div>
+                    <a href="giohang.html" class="header-action-btn" id="cartBtnHeader">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span>Giỏ hàng</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <nav class="main-navigation">
+            <div class="category-menu-toggle">
+                <i class="fas fa-bars"></i>
+                <span>DANH MỤC SẢN PHẨM</span>
+                <i class="fas fa-angle-down"></i>
+            </div>
+            <div class="main-nav-links">
+                <div class="container">
+                    <ul>
+                        <li><a href="index.html"><i class="fas fa-home"></i> Trang chủ</a></li>
+                        <li><a href="sanpham.html"><i class="fas fa-box-open"></i> Sản phẩm</a></li>
+                        <li><a href="donhang.html"><i class="fas fa-file-invoice-dollar"></i> Đơn hàng</a></li>
+                        <li><a href="gioithieu.html"><i class="fas fa-users"></i> Giới Thiệu</a></li>
+                        <li><a href="#"><i class="fas fa-phone-alt"></i> 0868xxxxxx</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- End Header Section -->
+
+    <!-- Main Content Area for Checkout Page -->
+    <main class="checkout-page">
+        <div class="container">
+            <!-- Breadcrumbs -->
+            <nav aria-label="breadcrumb" class="breadcrumbs">
+                <ol class="breadcrumb-list">
+                    <li class="breadcrumb-item"><a href="#">Giỏ hàng</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Thông tin giao hàng</li>
+                    <li class="breadcrumb-item"><a href="#">Thanh toán</a></li>
+                </ol>
+            </nav>
+
+            <div class="checkout-layout">
+                <!-- Cột trái: Thông tin giao hàng -->
+                <section class="shipping-info-section">
+                    <h2>Thông tin giao hàng</h2>
+                    <form id="shippingForm" class="shipping-form" novalidate>
+                        <div class="form-group">
+                            <label for="fullName">Họ và tên</label>
+                            <input type="text" id="fullName" name="fullName" placeholder="Nhập họ và tên đầy đủ" required>
+                            <div class="form-error-message"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="Nhập địa chỉ email" required>
+                            <div class="form-error-message"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Số điện thoại</label>
+                            <input type="tel" id="phone" name="phone" placeholder="Nhập số điện thoại" required>
+                            <div class="form-error-message"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="address">Địa chỉ</label>
+                            <input type="text" id="address" name="address" placeholder="Số nhà, tên đường" required>
+                            <div class="form-error-message"></div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="city">Tỉnh/Thành phố</label>
+                                <select id="city" name="city" required>
+                                    <option value="">Chọn tỉnh/thành phố</option>
+                                    <!-- Thêm các tỉnh thành vào đây (có thể load bằng JS) -->
+                                    <option value="hcm">TP. Hồ Chí Minh</option>
+                                    <option value="hanoi">Hà Nội</option>
+                                </select>
+                                <div class="form-error-message"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="district">Quận/Huyện</label>
+                                <select id="district" name="district" required>
+                                    <option value="">Chọn quận/huyện</option>
+                                    <!-- Load quận huyện dựa vào tỉnh thành -->
+                                </select>
+                                <div class="form-error-message"></div>
+                            </div>
+                        </div>
+                         <div class="form-group">
+                            <label for="ward">Phường/Xã</label>
+                            <select id="ward" name="ward" required>
+                                <option value="">Chọn phường/xã</option>
+                                <!-- Load phường xã dựa vào quận huyện -->
+                            </select>
+                            <div class="form-error-message"></div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-continue-payment">Tiếp tục đến phương thức thanh toán</button>
+
+                        <div class="discount-code-link">
+                            <a href="#" id="showDiscountCode">Sử dụng mã giảm giá <i class="fas fa-chevron-down"></i></a>
+                        </div>
+                        <div class="discount-code-input-wrapper" style="display: none;">
+                            <input type="text" id="discountCode" name="discountCode" placeholder="Nhập mã giảm giá">
+                            <button type="button" class="btn btn-apply-discount">Áp dụng</button>
+                        </div>
+                    </form>
+                </section>
+
+                <!-- Cột phải: Tóm tắt đơn hàng -->
+                <aside class="order-summary-section">
+                    <h2>Đơn hàng của bạn</h2>
+                    <div class="order-items-list">
+                        <!-- Item 1 -->
+                        <div class="order-item">
+                            <div class="item-image">
+                                <img src="img/product-checkout1-placeholder.jpg" alt="AMD Ryzen T 7900X3D">
+                                <span class="item-quantity">1</span>
+                            </div>
+                            <div class="item-details">
+                                <p class="item-name">AMD Ryzen T 7900X3D</p>
+                                <p class="item-variant">SKU: 12345</p>
+                            </div>
+                            <p class="item-price">8.500.000₫</p>
+                        </div>
+                        <!-- Thêm các item khác nếu có -->
+                    </div>
+
+                    <div class="order-summary-calculation">
+                        <div class="summary-row">
+                            <span>Tạm tính</span>
+                            <span id="subtotalPrice">8.500.000₫</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Phí vận chuyển</span>
+                            <span id="shippingFee">Chưa tính phí vận chuyển</span>
+                        </div>
+                         <div class="summary-row discount-row" style="display: none;"> <!-- Ẩn ban đầu -->
+                            <span>Mã giảm giá (<span id="appliedDiscountCode"></span>)</span>
+                            <span id="discountAmount">-0₫</span>
+                        </div>
+                        <hr class="summary-divider">
+                        <div class="summary-row total-row">
+                            <span>Tổng cộng</span>
+                            <span class="total-price" id="totalPrice">8.500.000₫</span>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+    <!-- End Main Content Area -->
+
+    <!-- Footer Section (Copy từ các trang khác) -->
+    <footer class="site-footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="newsletter-info">
+                    <h3>ĐĂNG KÝ NHẬN BẢN TIN</h3>
+                    <p>Để nhận thông tin mới nhất từ The Zoo Shop</p>
+                </div>
+                <div class="newsletter-form-container">
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Nhập địa chỉ email của bạn...">
+                        <button type="submit">Đăng ký</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="footer-main">
+            <div class="container">
+                <div class="footer-column">
+                    <img src="img/zoo_logo.png" alt="The Zoo Shop Logo" class="footer-logo">
+                    <p>The Zoo Shop chuyên cung cấp linh kiện máy tính - laptop giá rẻ</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Thông tin</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Địa chỉ: Ghi địa chỉ của bạn vào đây</p>
+                    <p><i class="fas fa-envelope"></i> Email: emailcuaban@example.com</p>
+                    <p><i class="fas fa-phone-alt"></i> Điện thoại: 0868xxxxxx</p>
+                </div>
+                <div class="footer-column footer-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.521037160999!2d106.6880308147499!3d10.77139299232499!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f20f2a7e9b9%3A0x29a8d6b7dc5a1ba0!2zQ2jhu6MgQuG6v24gVGjDoG5o!5e0!3m2!1svi!2s!4v1678888888888!5m2!1svi!2s" width="100%" height="180" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-social-connect">
+                    <p>Kết nối với chúng tôi</p>
+                    <div class="social-icons">
+                        <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="youtube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="tiktok"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" class="instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="zalo">Z</a>
+                    </div>
+                </div>
+                <a href="#" class="bct-logo">
+                    <img src="img/bct_logo.png" alt="Đã Thông Báo Bộ Công Thương">
+                </a>
+            </div>
+        </div>
+    </footer>
+    <!-- End Footer Section -->
+
+    <script src="js/script.js"></script>
+</body>
+</html>

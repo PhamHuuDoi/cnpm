@@ -1,0 +1,372 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif; /* Giữ nguyên hoặc thay đổi theo font của bạn */
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4; /* Màu nền chung của trang */
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px; /* Điều chỉnh nếu cần */
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ==================== HEADER STYLES (THE ZOO SHOP) ==================== */
+.site-header {
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* ----- Header Top ----- */
+.header-top {
+    padding: 15px 0; /* Tăng padding */
+}
+
+.header-top .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px; /* Khoảng cách giữa các nhóm phần tử */
+}
+
+.logo img {
+    height: 50px; /* Điều chỉnh kích thước logo */
+}
+
+.search-container {
+    flex-grow: 1; /* Cho phép ô tìm kiếm co giãn */
+    display: flex; /* Để input và button nằm trên cùng một hàng */
+    max-width: 600px; /* Giới hạn chiều rộng */
+}
+
+.search-form {
+    display: flex;
+    width: 100%;
+    border: 1px solid #ccc; /* Viền xám nhạt */
+    border-radius: 25px; /* Bo tròn nhiều hơn */
+    overflow: hidden;
+}
+
+.search-form input[type="text"] {
+    flex-grow: 1;
+    padding: 10px 20px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+}
+.search-form input[type="text"]::placeholder {
+    color: #aaa;
+}
+
+.search-form button {
+    background-color: #28B4B6; /* MÀU: Xanh ngọc từ Figma */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    /* border-radius: 0 25px 25px 0; */ /* Chỉ bo tròn bên phải nếu muốn */
+}
+.search-form button i {
+    font-size: 16px;
+}
+.search-form button:hover {
+    background-color: #209092; /* MÀU: Xanh ngọc đậm hơn khi hover */
+}
+
+.header-top-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Khoảng cách giữa các nút */
+}
+
+.header-action-btn {
+    display: flex;
+    align-items: center;
+    padding: 8px 15px;
+    border: 1px solid #ddd;
+    border-radius: 20px; /* Bo tròn */
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+}
+.header-action-btn i {
+    margin-right: 8px;
+    font-size: 18px;
+    color: #555;
+}
+.header-action-btn:hover {
+    background-color: #f5f5f5;
+    border-color: #ccc;
+    color: #28B4B6; /* MÀU: Xanh ngọc khi hover */
+}
+.header-action-btn:hover i {
+    color: #28B4B6; /* MÀU: Xanh ngọc khi hover */
+}
+
+
+/* ----- Main Navigation ----- */
+.main-navigation {
+    display: flex; /* Sử dụng flex để chia 2 phần */
+    background-color: #fff; /* Nền trắng chung cho thanh nav */
+    border-top: 1px solid #e9e9e9;
+    border-bottom: 1px solid #e9e9e9;
+}
+
+.category-menu-toggle {
+    background-color: #333A45; /* MÀU: Nền đen/xám đậm từ Figma */
+    color: #fff;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 14px;
+    white-space: nowrap;
+}
+.category-menu-toggle i.fa-bars {
+    margin-right: 10px;
+}
+.category-menu-toggle i.fa-angle-down {
+    margin-left: auto; /* Đẩy icon mũi tên xuống cuối */
+    padding-left: 10px;
+}
+
+.main-nav-links {
+    flex-grow: 1; /* Phần link chiếm phần còn lại */
+    background-color: #28B4B6; /* MÀU: Xanh ngọc từ Figma */
+}
+
+.main-nav-links ul {
+    display: flex;
+    justify-content: flex-start; /* Căn chỉnh các mục menu */
+    align-items: center;
+    height: 100%; /* Để các mục menu căn giữa theo chiều dọc */
+}
+
+.main-nav-links ul li a {
+    color: #fff;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+    height: 100%;
+}
+.main-nav-links ul li a i {
+    margin-right: 8px;
+    font-size: 16px;
+}
+.main-nav-links ul li a:hover,
+.main-nav-links ul li.active a { /* Thêm class active cho trang hiện tại */
+    background-color: #209092; /* MÀU: Xanh ngọc đậm hơn khi hover/active */
+}
+
+
+/* ==================== FOOTER STYLES (THE ZOO SHOP) ==================== */
+.site-footer {
+    background-color: #fff;
+    color: #555;
+    font-size: 14px; /* Tăng font chữ chung cho footer */
+    padding-top: 30px; /* Bỏ padding-top ở đây nếu footer-top có padding riêng */
+}
+
+/* ----- Footer Top (Newsletter) ----- */
+.footer-top {
+    background-color: #fff; /* Nền trắng theo mẫu */
+    padding: 30px 0;
+    border-bottom: 1px solid #e9e9e9;
+}
+
+.footer-top .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Cho phép xuống dòng trên mobile */
+}
+
+.newsletter-info {
+    flex-basis: 40%; /* Điều chỉnh tỷ lệ */
+}
+
+.newsletter-info h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: #222;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.newsletter-info p {
+    font-size: 14px;
+    color: #666;
+}
+
+.newsletter-form-container {
+    flex-basis: 55%; /* Điều chỉnh tỷ lệ */
+}
+
+.newsletter-form {
+    display: flex;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.newsletter-form input[type="email"] {
+    flex-grow: 1;
+    padding: 12px 15px; /* Tăng padding */
+    border: none;
+    outline: none;
+    font-size: 14px;
+}
+.newsletter-form input[type="email"]::placeholder {
+    color: #aaa;
+}
+
+.newsletter-form button {
+    background-color: #28B4B6; /* MÀU: Xanh ngọc */
+    color: #fff;
+    border: none;
+    padding: 12px 25px; /* Tăng padding */
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+.newsletter-form button:hover {
+    background-color: #209092;
+}
+
+/* ----- Footer Main ----- */
+.footer-main {
+    padding: 40px 0;
+}
+
+.footer-main .container {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1.5fr; /* Chia cột theo tỷ lệ: Logo, Thông tin, Bản đồ */
+    gap: 30px;
+}
+
+.footer-column .footer-logo { /* Style riêng cho logo ở footer */
+    height: 50px; /* Điều chỉnh */
+    margin-bottom: 15px;
+}
+
+.footer-column h4 { /* Tiêu đề "Thông tin" */
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #222;
+}
+
+.footer-column p,
+.footer-column ul li {
+    margin-bottom: 10px;
+    line-height: 1.7;
+    font-size: 14px;
+}
+.footer-column ul li a:hover {
+    color: #28B4B6;
+}
+.footer-column p i {
+    margin-right: 10px;
+    color: #28B4B6; /* MÀU: Xanh ngọc cho icon */
+    width: 16px;
+    text-align: center;
+}
+
+.footer-map iframe { /* Style cho bản đồ nếu bạn nhúng iframe */
+    width: 100%;
+    height: 200px; /* Điều chỉnh chiều cao */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* ----- Footer Bottom ----- */
+.footer-bottom {
+    padding: 20px 0;
+    background-color: #f7f7f7; /* Nền xám nhạt cho phần cuối */
+    border-top: 1px solid #e9e9e9;
+}
+
+.footer-bottom .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-social-connect p {
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 5px; /* Cho responsive */
+}
+
+.social-icons {
+    display: flex;
+    align-items: center;
+}
+
+.social-icons a {
+    color: #fff; /* Màu icon trắng */
+    font-size: 16px; /* Kích thước icon */
+    margin-left: 8px;
+    width: 32px; /* Kích thước vùng tròn */
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+.social-icons a:first-child {
+    margin-left: 0;
+}
+
+.social-icons a.facebook { background-color: #3b5998; }
+.social-icons a.youtube { background-color: #FF0000; }
+.social-icons a.tiktok { background-color: #000000; } /* Hoặc màu gradient của TikTok */
+.social-icons a.instagram { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%); }
+.social-icons a.zalo { background-color: #0068FF; } /* Màu Zalo */
+
+
+.social-icons a:hover {
+    opacity: 0.8;
+}
+
+.bct-logo img {
+    height: 45px; /* Điều chỉnh */
+}

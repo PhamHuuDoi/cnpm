@@ -1,0 +1,91 @@
+/* Styles specific to the All Products Page */
+
+.products-page .container {
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
+
+.page-main-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 25px;
+    text-align: center; /* Hoặc left tùy thiết kế */
+    /* border-bottom: 2px solid #28B4B6; */ /* Tùy chọn */
+    /* padding-bottom: 10px; */
+    /* display: inline-block; */
+}
+
+/* Style cho bộ lọc (nếu bạn quyết định thêm) */
+.product-filters-sidebar {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    margin-bottom: 30px;
+    /* Thêm style cho các filter group, input, button */
+}
+
+.product-filters-sidebar h4 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.filter-group {
+    margin-bottom: 20px;
+}
+.filter-group h5 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+.filter-group ul {
+    list-style: none;
+    padding-left: 0;
+}
+.filter-group ul li {
+    margin-bottom: 8px;
+}
+.filter-group ul li input[type="checkbox"] {
+    margin-right: 8px;
+    accent-color: #28B4B6; /* MÀU: Xanh ngọc */
+}
+.filter-group ul li label {
+    font-size: 14px;
+    color: #555;
+    cursor: pointer;
+}
+
+.btn-apply-filters {
+    width: 100%;
+    padding: 10px;
+    background-color: #28B4B6; /* MÀU: Xanh ngọc */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    cursor: pointer;
+}
+.btn-apply-filters:hover {
+    background-color: #209092;
+}
+
+
+/* Kế thừa style .products-grid, .product-item, .pagination-container từ category.css */
+/* Nếu bạn muốn class grid khác biệt cho trang này, ví dụ: .all-products-grid */
+.all-products-grid {
+    /* Có thể thêm hoặc ghi đè style ở đây nếu cần */
+    /* Ví dụ:
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 25px;
+    */
+}
+
+/* Responsive for Products Page (nếu cần ghi đè hoặc thêm mới) */
+@media (max-width: 767.98px) {
+    .page-main-title {
+        font-size: 24px;
+    }
+    /* Nếu có sidebar filter, bạn có thể cần style để nó hiển thị phù hợp trên mobile,
+       ví dụ: chuyển thành dạng modal hoặc accordion */
+}

@@ -1,0 +1,264 @@
+/* Hero Section */
+.hero-section {
+    margin-bottom: 20px;
+}
+.hero-section .container {
+    display: flex;
+    gap: 15px; /* Khoảng cách giữa banner chính và banner phụ */
+}
+
+.hero-main-banner {
+    flex: 2; /* Chiếm 2/3 không gian */
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+}
+.hero-main-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-side-banners {
+    flex: 1; /* Chiếm 1/3 không gian */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.side-banner {
+    flex: 1;
+    border-radius: 8px;
+    overflow: hidden;
+}
+.side-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Promo Small Banners Section */
+.promo-small-banners {
+    margin-bottom: 30px;
+}
+.promo-small-banners .container {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+.promo-banner-item {
+    flex: 1;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.promo-banner-item img {
+    width: 100%;
+    transition: transform 0.3s ease;
+}
+.promo-banner-item:hover img {
+    transform: scale(1.03);
+}
+
+/* Hot Products Section */
+.hot-products-section {
+    margin-bottom: 30px;
+}
+.product-categories-tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+    gap: 10px;
+}
+.tab-item {
+    padding: 8px 20px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    background-color: #fff;
+    color: #555;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+.tab-item.active, .tab-item:hover {
+    background-color: #00AEEF; /* Màu xanh */
+    color: #fff;
+    border-color: #00AEEF;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); /* Điều chỉnh minmax cho phù hợp */
+    gap: 20px;
+}
+.product-item {
+    background-color: #fff;
+    border: 1px solid #f0f0f0;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+}
+.product-item:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.product-image {
+    padding: 15px; /* Để hình ảnh không sát viền */
+    text-align: center; /* Căn giữa hình ảnh */
+    height: 200px; /* Chiều cao cố định cho vùng ảnh */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.product-image img {
+    max-height: 100%;
+    object-fit: contain;
+}
+.product-info {
+    padding: 15px;
+    text-align: left;
+}
+.product-name {
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 8px;
+    height: 40px; /* Giới hạn chiều cao cho tên sản phẩm (2 dòng) */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.product-price {
+    font-size: 16px;
+    font-weight: 700;
+    color: #E81C2E; /* Màu đỏ cho giá */
+}
+
+/* Mid Banners Section */
+.mid-banners-section {
+    margin-bottom: 30px;
+}
+.mid-banners-section .container {
+    display: flex;
+    flex-wrap: wrap; /* Cho phép banner full-width xuống dòng */
+    gap: 15px;
+}
+.mid-banner-item {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.mid-banner-item:not(.full-width-banner) {
+    flex: 1; /* Chia đều cho các banner không full-width */
+}
+.mid-banner-item.full-width-banner {
+    flex-basis: 100%; /* Chiếm toàn bộ chiều rộng */
+}
+.mid-banner-item img {
+    width: 100%;
+}
+
+/* Best Sellers & News Section */
+.best-sellers-news-section {
+    margin-bottom: 30px;
+}
+.best-sellers-news-section .container {
+    display: flex;
+    gap: 30px;
+}
+.best-sellers-column {
+    flex: 1.5; /* Cột danh mục bán chạy rộng hơn */
+}
+.news-column {
+    flex: 1;
+}
+.best-seller-banner {
+    display: block;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.best-seller-banner img {
+    width: 100%;
+}
+
+.news-list {
+    margin-bottom: 15px;
+}
+.news-article-item {
+    margin-bottom: 15px;
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 15px;
+}
+.news-article-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+.news-article-item a {
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+}
+.news-article-image {
+    flex-shrink: 0;
+    width: 100px; /* Kích thước ảnh thumbnail */
+    height: 70px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.news-article-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.news-article-content {
+    flex-grow: 1;
+}
+.news-article-title {
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 5px;
+    line-height: 1.4;
+}
+.news-article-title:hover {
+    color: #00AEEF; /* Màu xanh khi hover */
+}
+.news-article-date {
+    font-size: 12px;
+    color: #777;
+}
+.view-all-news {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 500;
+    color: #00AEEF; /* Màu xanh */
+}
+.view-all-news i {
+    margin-left: 5px;
+}
+.view-all-news:hover {
+    text-decoration: underline;
+}
+
+/* Bottom Banners Section */
+.bottom-banners-section {
+    margin-bottom: 30px;
+}
+.bottom-banners-section .container {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+.bottom-banner-item {
+    flex: 1;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.bottom-banner-item img {
+    width: 100%;
+}

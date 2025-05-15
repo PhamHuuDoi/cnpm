@@ -1,0 +1,129 @@
+/* Styles for About Page */
+
+.about-page .container {
+    padding-top: 30px;
+    padding-bottom: 40px;
+}
+
+.about-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.about-header h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 15px;
+}
+
+.intro-paragraph {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.7;
+    max-width: 800px; /* Giới hạn chiều rộng cho dễ đọc */
+    margin: 0 auto 10px auto;
+}
+
+.table-of-contents {
+    background-color: #f9f9f9; /* Nền xám nhạt */
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px 25px;
+    margin-bottom: 40px;
+    max-width: 500px; /* Giới hạn chiều rộng của box */
+    /* margin-left: auto; */ /* Căn giữa nếu muốn */
+    /* margin-right: auto; */
+}
+
+.table-of-contents h2 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.table-of-contents ol {
+    list-style: none; /* Bỏ dấu chấm mặc định */
+    padding-left: 0;
+}
+
+.table-of-contents ol li {
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+.table-of-contents ol li a {
+    color: #28B4B6; /* MÀU: Xanh ngọc cho link */
+    text-decoration: none;
+    font-weight: 500;
+}
+.table-of-contents ol li a:hover {
+    text-decoration: underline;
+    color: #209092; /* MÀU: Xanh ngọc đậm hơn khi hover */
+}
+
+.about-section {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px dashed #eee; /* Đường kẻ phân cách nhẹ */
+}
+.about-section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.about-section h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    /* border-bottom: 2px solid #28B4B6; */ /* Có thể thêm gạch chân cho tiêu đề section */
+    /* display: inline-block; */
+}
+
+.about-section p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.about-section .note {
+    background-color: #fffbe6; /* Nền vàng nhạt cho lưu ý */
+    border-left: 4px solid #ffe58f; /* Viền vàng */
+    padding: 15px;
+    font-size: 15px;
+    color: #8a6d3b; /* Màu chữ cho lưu ý */
+    border-radius: 4px;
+}
+.about-section .note strong {
+    font-weight: 700;
+}
+
+/* Responsive for About Page */
+@media (max-width: 767.98px) {
+    .about-header h1 {
+        font-size: 24px;
+    }
+    .intro-paragraph {
+        font-size: 15px;
+    }
+    .table-of-contents {
+        max-width: 100%;
+        padding: 15px;
+    }
+    .table-of-contents h2 {
+        font-size: 17px;
+    }
+    .table-of-contents ol li {
+        font-size: 14px;
+    }
+    .about-section h2 {
+        font-size: 20px;
+    }
+    .about-section p, .about-section .note {
+        font-size: 15px;
+    }
+}

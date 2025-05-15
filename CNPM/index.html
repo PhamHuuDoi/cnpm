@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GearVN Clone - Phụ kiện máy tính</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="site-header">
+        <div class="header-top">
+            <div class="container">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="img/zoo_logo.png" alt="The Zoo Shop Logo">
+                        <!-- THAY THẾ: img/zoo_logo.png bằng logo của bạn -->
+                    </a>
+                </div>
+                <div class="search-container">
+                    <form action="/search" method="get" class="search-form">
+                        <input type="text" name="q" placeholder="Bạn cần tìm gì...">
+                        <button type="submit"><i class="fas fa-search"></i> Tìm kiếm</button>
+                    </form>
+                </div>
+                <div class="header-top-actions">
+                    <a href="/dangnhap.html" class="header-action-btn">
+                        <i class="fas fa-sign-in-alt"></i>
+                        <span>Đăng nhập</span>
+                    </a>
+                    <a href="giohang.html" class="header-action-btn">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span>Giỏ hàng</span>
+                        <!-- <span class="cart-count">3</span>  Nếu có số lượng thì style lại -->
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <nav class="main-navigation">
+            <div class="category-menu-toggle">
+                <i class="fas fa-bars"></i>
+                <span>DANH MỤC SẢN PHẨM</span>
+                <i class="fas fa-angle-down"></i>
+            </div>
+            <div class="main-nav-links">
+                <div class="container"> <!-- Container cho các link menu chính -->
+                    <ul>
+                        <li class="active"><a href="#"><i class="fas fa-home"></i> Trang chủ</a></li>
+                        <li><a href="/sanpham.html"><i class="fas fa-box-open"></i> Sản phẩm</a></li>
+                        <li><a href="/donhang.html"><i class="fas fa-file-invoice-dollar"></i> Đơn hàng</a></li>
+                        <li><a href="/gioithieu.html"><i class="fas fa-users"></i> Giới Thiệu</a></li>
+                        <li><a href="#"><i class="fas fa-phone-alt"></i> 0868xxxxxx</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- End Header Section -->
+
+    <!-- Main Content Area -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="container">
+                <div class="hero-main-banner">
+                    <img src="img/hero-banner-placeholder.jpg" alt="Màn hình chính hãng">
+                    <!-- THAY THẾ: img/hero-banner-placeholder.jpg bằng banner chính của bạn -->
+                    <div class="hero-banner-overlay">
+                        <!-- Có thể thêm text hoặc nút ở đây nếu thiết kế có -->
+                    </div>
+                </div>
+                <div class="hero-side-banners">
+                    <div class="side-banner">
+                        <img src="img/side-banner1-placeholder.jpg" alt="Side Banner 1">
+                        <!-- THAY THẾ: img/side-banner1-placeholder.jpg -->
+                    </div>
+                    <div class="side-banner">
+                        <img src="img/side-banner2-placeholder.jpg" alt="Side Banner 2">
+                        <!-- THAY THẾ: img/side-banner2-placeholder.jpg -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Hero Section -->
+
+        <!-- Promo Small Banners Section -->
+        <section class="promo-small-banners">
+            <div class="container">
+                <a href="#" class="promo-banner-item">
+                    <img src="img/promo-small1-placeholder.jpg" alt="Build PC Giá Rẻ">
+                    <!-- THAY THẾ -->
+                </a>
+                <a href="#" class="promo-banner-item">
+                    <img src="img/promo-small2-placeholder.jpg" alt="Laptop Gaming Giảm Sốc">
+                    <!-- THAY THẾ -->
+                </a>
+                <a href="#" class="promo-banner-item">
+                    <img src="img/promo-small3-placeholder.jpg" alt="Phụ Kiện Gaming">
+                    <!-- THAY THẾ -->
+                </a>
+            </div>
+        </section>
+        <!-- End Promo Small Banners Section -->
+
+        <!-- Hot Products Section -->
+        <section class="hot-products-section">
+            <div class="container">
+                <h2 class="section-title">XEM NGAY SẢN PHẨM HOT</h2>
+                <div class="product-categories-tabs">
+                    <button class="tab-item active" data-category="all">Tất cả</button>
+                    <button class="tab-item" data-category="pc">GÓC PC</button>
+                    <button class="tab-item" data-category="furniture">BÀN GHẾ GAMING</button>
+                    <button class="tab-item" data-category="accessories">PHỤ KIỆN GAMING</button>
+                </div>
+                <div class="products-grid">
+                    <!-- Product Item 1 -->
+                    <div class="product-item" data-category-item="pc accessories">
+                        <a href="#">
+                            <div class="product-image">
+                                <img src="img/product1-placeholder.jpg" alt="Tai nghe Gaming">
+                                <!-- THAY THẾ -->
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-name">Tai Nghe Gaming HyperX Cloud II</h3>
+                                <p class="product-price">2.590.000₫</p>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- Product Item 2 -->
+                    <div class="product-item" data-category-item="accessories">
+                        <a href="#">
+                            <div class="product-image">
+                                <img src="img/product2-placeholder.jpg" alt="Tai nghe nhét tai">
+                                <!-- THAY THẾ -->
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-name">Tai Nghe DareU EH416 RGB</h3>
+                                <p class="product-price">450.000₫</p>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- Product Item 3 -->
+                    <div class="product-item" data-category-item="accessories">
+                        <a href="#">
+                            <div class="product-image">
+                                <img src="img/product3-placeholder.jpg" alt="Chuột Gaming">
+                                <!-- THAY THẾ -->
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-name">Chuột Logitech G102 LightSync</h3>
+                                <p class="product-price">550.000₫</p>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- Product Item 4 -->
+                    <div class="product-item" data-category-item="pc">
+                        <a href="#">
+                            <div class="product-image">
+                                <img src="img/product4-placeholder.jpg" alt="Tai nghe cao cấp">
+                                <!-- THAY THẾ -->
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-name">Tai Nghe SteelSeries Arctis 7P+</h3>
+                                <p class="product-price">4.200.000₫</p>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- Thêm các sản phẩm khác tương tự -->
+                </div>
+            </div>
+        </section>
+        <!-- End Hot Products Section -->
+
+        <!-- Mid Banners Section -->
+        <section class="mid-banners-section">
+            <div class="container">
+                <a href="#" class="mid-banner-item">
+                    <img src="img/mid-banner1-placeholder.jpg" alt="Mid Banner 1">
+                    <!-- THAY THẾ -->
+                </a>
+                <a href="#" class="mid-banner-item">
+                    <img src="img/mid-banner2-placeholder.jpg" alt="Mid Banner 2">
+                    <!-- THAY THẾ -->
+                </a>
+                 <a href="#" class="mid-banner-item full-width-banner">
+                    <img src="img/mid-banner-full-placeholder.jpg" alt="Mid Banner Full Width">
+                    <!-- THAY THẾ -->
+                </a>
+            </div>
+        </section>
+        <!-- End Mid Banners Section -->
+
+
+        <!-- Best Sellers & News Section -->
+        <section class="best-sellers-news-section">
+            <div class="container">
+                <div class="best-sellers-column">
+                    <h2 class="section-title-alt">DANH MỤC BÁN CHẠY</h2>
+                    <a href="#" class="best-seller-banner">
+                        <img src="img/bestseller-banner-placeholder.jpg" alt="Thanh lý loa Razer">
+                        <!-- THAY THẾ -->
+                    </a>
+                    <a href="#" class="best-seller-banner small-banner">
+                         <img src="img/bestseller-small-placeholder.jpg" alt="Siêu thanh lý Razer">
+                         <!-- THAY THẾ -->
+                    </a>
+                </div>
+                <div class="news-column">
+                    <h2 class="section-title-alt">TIN TỨC CÔNG NGHỆ</h2>
+                    <div class="news-list">
+                        <div class="news-article-item">
+                            <a href="#">
+                                <div class="news-article-image">
+                                    <img src="img/news-thumb1-placeholder.jpg" alt="Tin tức 1">
+                                    <!-- THAY THẾ -->
+                                </div>
+                                <div class="news-article-content">
+                                    <h3 class="news-article-title">Chương trình thu cũ đổi mới tai nghe</h3>
+                                    <span class="news-article-date">10 tháng 04, 2023</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="news-article-item">
+                            <a href="#">
+                                <div class="news-article-image">
+                                    <img src="img/news-thumb2-placeholder.jpg" alt="Tin tức 2">
+                                    <!-- THAY THẾ -->
+                                </div>
+                                <div class="news-article-content">
+                                    <h3 class="news-article-title">Chương trình khuyến mãi kỷ niệm 21 năm HyperX</h3>
+                                    <span class="news-article-date">20 tháng 03, 2023</span>
+                                </div>
+                            </a>
+                        </div>
+                         <div class="news-article-item">
+                            <a href="#">
+                                <div class="news-article-image">
+                                    <img src="img/news-thumb3-placeholder.jpg" alt="Tin tức 3">
+                                    <!-- THAY THẾ -->
+                                </div>
+                                <div class="news-article-content">
+                                    <h3 class="news-article-title">Xả hàng thanh lý tai nghe Razer Sale Off tới 50%</h3>
+                                    <span class="news-article-date">12 tháng 03, 2023</span>
+                                </div>
+                            </a>
+                        </div>
+                        <!-- Thêm tin tức khác -->
+                    </div>
+                    <a href="#" class="view-all-news">Xem tất cả tin tức <i class="fas fa-angle-right"></i></a>
+                </div>
+            </div>
+        </section>
+        <!-- End Best Sellers & News Section -->
+
+        <!-- Bottom Banners Section -->
+        <section class="bottom-banners-section">
+            <div class="container">
+                <a href="#" class="bottom-banner-item">
+                    <img src="img/bottom-banner1-placeholder.jpg" alt="Bottom Banner 1">
+                    <!-- THAY THẾ -->
+                </a>
+                <a href="#" class="bottom-banner-item">
+                    <img src="img/bottom-banner2-placeholder.jpg" alt="Bottom Banner 2">
+                    <!-- THAY THẾ -->
+                </a>
+            </div>
+        </section>
+        <!-- End Bottom Banners Section -->
+
+    </main>
+    <!-- End Main Content Area -->
+
+    <!-- Footer Section -->
+    <footer class="site-footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="newsletter-info">
+                    <h3>ĐĂNG KÝ NHẬN BẢN TIN</h3>
+                    <p>Để nhận thông tin mới nhất từ The Zoo Shop</p>
+                </div>
+                <div class="newsletter-form-container">
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Nhập địa chỉ email của bạn...">
+                        <button type="submit">Đăng ký</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="footer-main">
+            <div class="container">
+                <div class="footer-column">
+                    <img src="img/zoo_logo.png" alt="The Zoo Shop Logo" class="footer-logo">
+                    <!-- THAY THẾ -->
+                    <p>The Zoo Shop chuyên cung cấp linh kiện máy tính - laptop giá rẻ</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Thông tin</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Địa chỉ: Ghi địa chỉ của bạn vào đây</p>
+                    <p><i class="fas fa-envelope"></i> Email: emailcuaban@example.com</p>
+                    <p><i class="fas fa-phone-alt"></i> Điện thoại: 0868xxxxxx</p>
+                </div>
+                <div class="footer-column footer-map">
+                    <!-- Nhúng bản đồ Google Maps vào đây nếu cần -->
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.521037160999!2d106.6880308147499!3d10.77139299232499!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f20f2a7e9b9%3A0x29a8d6b7dc5a1ba0!2zQ2jhu6MgQuG6v24gVGjDoG5o!5e0!3m2!1svi!2s!4v1678888888888!5m2!1svi!2s" width="100%" height="180" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-social-connect">
+                    <p>Kết nối với chúng tôi</p>
+                    <div class="social-icons">
+                        <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="youtube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="tiktok"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" class="instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="zalo">Z</a> <!-- Icon Zalo có thể cần ảnh hoặc SVG -->
+                    </div>
+                </div>
+                <a href="#" class="bct-logo">
+                    <img src="img/bct_logo.png" alt="Đã Thông Báo Bộ Công Thương">
+                    <!-- THAY THẾ -->
+                </a>
+            </div>
+        </div>
+    </footer>
+    <!-- End Footer Section -->
+
+    <script src="js/script.js"></script>
+</body>
+</html>

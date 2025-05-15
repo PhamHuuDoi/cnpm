@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giỏ hàng - The Zoo Shop</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/giohang.css">
+</head>
+<body>
+    <!-- Header Section (Copy từ các trang khác) -->
+    <header class="site-header">
+        <div class="header-top">
+            <div class="container">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="img/zoo_logo.png" alt="The Zoo Shop Logo">
+                    </a>
+                </div>
+                <div class="search-container">
+                    <form action="/search" method="get" class="search-form">
+                        <input type="text" name="q" placeholder="Bạn cần tìm gì...">
+                        <button type="submit"><i class="fas fa-search"></i> Tìm kiếm</button>
+                    </form>
+                </div>
+                <div class="header-top-actions">
+                    <a href="dangnhap.html" class="header-action-btn" id="loginBtnHeader">
+                        <i class="fas fa-sign-in-alt"></i>
+                        <span>Đăng nhập</span>
+                    </a>
+                    <div class="user-avatar-header" id="userAvatarHeader" style="display: none;">
+                        <img src="img/avatar-placeholder.png" alt="User Avatar" id="headerUserAvatarImg">
+                        <ul class="user-dropdown-menu">
+                            <li><a href="thongtinnguoidung.html">Tài khoản của tôi</a></li>
+                            <li><a href="#">Đơn hàng</a></li>
+                            <li><a href="#" id="logoutBtnHeader">Đăng xuất</a></li>
+                        </ul>
+                    </div>
+                    <a href="giohang.html" class="header-action-btn active" id="cartBtnHeader"> <!-- Đánh dấu active -->
+                        <i class="fas fa-shopping-cart"></i>
+                        <span>Giỏ hàng</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <nav class="main-navigation">
+            <div class="category-menu-toggle">
+                <i class="fas fa-bars"></i>
+                <span>DANH MỤC SẢN PHẨM</span>
+                <i class="fas fa-angle-down"></i>
+            </div>
+            <div class="main-nav-links">
+                <div class="container">
+                    <ul>
+                        <li><a href="index.html"><i class="fas fa-home"></i> Trang chủ</a></li>
+                        <li><a href="sanpham.html"><i class="fas fa-box-open"></i> Sản phẩm</a></li>
+                        <li><a href="donhang.html"><i class="fas fa-file-invoice-dollar"></i> Đơn hàng</a></li>
+                        <li><a href="gioithieu.html"><i class="fas fa-users"></i> Giới Thiệu</a></li>
+                        <li><a href="#"><i class="fas fa-phone-alt"></i> 0868xxxxxx</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- End Header Section -->
+
+    <!-- Main Content Area for Cart Page -->
+    <main class="cart-page">
+        <div class="container">
+            <h1 class="page-title">GIỎ HÀNG CỦA BẠN</h1>
+
+            <!-- Trạng thái 1: Giỏ hàng có sản phẩm -->
+            <div class="cart-content" id="cartWithItems">
+                <div class="cart-items-list">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th colspan="2">Sản phẩm</th>
+                                <th>Đơn giá</th>
+                                <th>Số lượng</th>
+                                <th>Thành tiền</th>
+                                <th>Xóa</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Item 1 -->
+                            <tr class="cart-item">
+                                <td class="product-image-cell">
+                                    <a href="chitietsanpham.html"><img src="img/product-cart1-placeholder.jpg" alt="Razer DeathAdder V2 Pro"></a>
+                                </td>
+                                <td class="product-name-cell">
+                                    <a href="chitietsanpham.html">Razer DeathAdder V2 Pro Wireless Gaming Mouse</a>
+                                    <p class="product-sku">SKU: RZ01-03350100</p>
+                                </td>
+                                <td class="product-price-cell">2.990.000₫</td>
+                                <td class="product-quantity-cell">
+                                    <div class="quantity-selector cart-quantity">
+                                        <button type="button" class="quantity-btn minus-btn" data-id="1">-</button>
+                                        <input type="number" value="1" min="1" class="quantity-input" data-id="1">
+                                        <button type="button" class="quantity-btn plus-btn" data-id="1">+</button>
+                                    </div>
+                                </td>
+                                <td class="product-subtotal-cell">2.990.000₫</td>
+                                <td class="product-remove-cell">
+                                    <button class="remove-item-btn" data-id="1"><i class="fas fa-trash-alt"></i></button>
+                                </td>
+                            </tr>
+                            <!-- Item 2 -->
+                            <tr class="cart-item">
+                                <td class="product-image-cell">
+                                    <a href="chitietsanpham.html"><img src="img/product-cart2-placeholder.jpg" alt="Logitech G Pro X Keyboard"></a>
+                                </td>
+                                <td class="product-name-cell">
+                                    <a href="chitietsanpham.html">Logitech G Pro X Mechanical Gaming Keyboard</a>
+                                    <p class="product-sku">SKU: LG-920-009239</p>
+                                </td>
+                                <td class="product-price-cell">3.500.000₫</td>
+                                <td class="product-quantity-cell">
+                                    <div class="quantity-selector cart-quantity">
+                                        <button type="button" class="quantity-btn minus-btn" data-id="2">-</button>
+                                        <input type="number" value="1" min="1" class="quantity-input" data-id="2">
+                                        <button type="button" class="quantity-btn plus-btn" data-id="2">+</button>
+                                    </div>
+                                </td>
+                                <td class="product-subtotal-cell">3.500.000₫</td>
+                                <td class="product-remove-cell">
+                                    <button class="remove-item-btn" data-id="2"><i class="fas fa-trash-alt"></i></button>
+                                </td>
+                            </tr>
+                            <!-- Thêm các sản phẩm khác nếu có -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="cart-summary">
+                    <div class="summary-box">
+                        <h2>THANH TOÁN</h2>
+                        <div class="voucher-section">
+                            <input type="text" id="voucherCode" placeholder="Nhập mã voucher">
+                            <button type="button" class="btn btn-apply-voucher">Áp dụng</button>
+                        </div>
+                        <div class="summary-row">
+                            <span>Tạm tính (<span id="cartItemCount">2</span> sản phẩm)</span>
+                            <span id="cartSubtotal">6.490.000₫</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Phí giao hàng</span>
+                            <span id="cartShippingFee">Sẽ được tính ở bước sau</span>
+                        </div>
+                        <div class="summary-row total-row">
+                            <span>THÀNH TIỀN</span>
+                            <span class="total-price" id="cartTotal">6.490.000₫</span>
+                        </div>
+                        <a href="thanhtoan.html" class="btn btn-checkout">TIẾN HÀNH ĐẶT HÀNG</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Trạng thái 2: Giỏ hàng trống -->
+            <div class="cart-empty" id="cartEmpty" style="display: none;"> <!-- Ẩn ban đầu -->
+                <img src="img/empty-cart-placeholder.png" alt="Giỏ hàng trống" class="empty-cart-image">
+                <h2>Bạn chưa có sản phẩm nào...</h2>
+                <p>Hãy khám phá thêm các sản phẩm tuyệt vời của chúng tôi!</p>
+                <a href="category.html" class="btn btn-primary btn-continue-shopping">Tiếp tục mua sắm</a>
+            </div>
+
+        </div>
+    </main>
+    <!-- End Main Content Area -->
+
+    <!-- Footer Section (Copy từ các trang khác) -->
+    <footer class="site-footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="newsletter-info">
+                    <h3>ĐĂNG KÝ NHẬN BẢN TIN</h3>
+                    <p>Để nhận thông tin mới nhất từ The Zoo Shop</p>
+                </div>
+                <div class="newsletter-form-container">
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Nhập địa chỉ email của bạn...">
+                        <button type="submit">Đăng ký</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="footer-main">
+            <div class="container">
+                <div class="footer-column">
+                    <img src="img/zoo_logo.png" alt="The Zoo Shop Logo" class="footer-logo">
+                    <p>The Zoo Shop chuyên cung cấp linh kiện máy tính - laptop giá rẻ</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Thông tin</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Địa chỉ: Ghi địa chỉ của bạn vào đây</p>
+                    <p><i class="fas fa-envelope"></i> Email: emailcuaban@example.com</p>
+                    <p><i class="fas fa-phone-alt"></i> Điện thoại: 0868xxxxxx</p>
+                </div>
+                <div class="footer-column footer-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.521037160999!2d106.6880308147499!3d10.77139299232499!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f20f2a7e9b9%3A0x29a8d6b7dc5a1ba0!2zQ2jhu6MgQuG6v24gVGjDoG5o!5e0!3m2!1svi!2s!4v1678888888888!5m2!1svi!2s" width="100%" height="180" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-social-connect">
+                    <p>Kết nối với chúng tôi</p>
+                    <div class="social-icons">
+                        <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="youtube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="tiktok"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" class="instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="zalo">Z</a>
+                    </div>
+                </div>
+                <a href="#" class="bct-logo">
+                    <img src="img/bct_logo.png" alt="Đã Thông Báo Bộ Công Thương">
+                </a>
+            </div>
+        </div>
+    </footer>
+    <!-- End Footer Section -->
+
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,187 @@
+/* Styles for Authentication Pages (Login & Register) */
+
+.auth-page {
+    padding: 40px 0; /* Khoảng cách trên dưới cho toàn trang */
+    background-color: #f9f9f9; /* Nền xám nhạt cho trang */
+    min-height: calc(100vh - 200px); /* Đảm bảo form không bị footer đè nếu nội dung ít (200px là chiều cao ước tính của header+footer) */
+    display: flex;
+    align-items: center; /* Căn giữa form theo chiều dọc nếu nội dung ít */
+}
+
+.auth-form-container {
+    max-width: 450px; /* Chiều rộng tối đa của form */
+    margin: 0 auto; /* Căn giữa form */
+    background-color: #fff;
+    padding: 30px 35px; /* Padding bên trong form */
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.auth-title {
+    font-size: 26px;
+    font-weight: 700;
+    color: #333;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    color: #444;
+    margin-bottom: 8px;
+}
+.form-group label.checkbox-label { /* Label cho checkbox */
+    display: inline-block;
+    margin-left: 5px;
+    font-weight: 400;
+    color: #555;
+    cursor: pointer;
+}
+.form-group label.checkbox-label a {
+    color: #28B4B6; /* MÀU: Xanh ngọc */
+    text-decoration: underline;
+}
+
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group input[type="password"] {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+    border-color: #28B4B6; /* MÀU: Xanh ngọc khi focus */
+    box-shadow: 0 0 0 0.2rem rgba(40, 180, 182, 0.25); /* Hiệu ứng shadow khi focus */
+}
+
+.password-input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.password-input-wrapper input[type="password"],
+.password-input-wrapper input[type="text"] { /* Khi đổi type thành text */
+    padding-right: 40px; /* Tạo không gian cho icon mắt */
+}
+
+.toggle-password-visibility {
+    position: absolute;
+    right: 12px;
+    cursor: pointer;
+    color: #888;
+    font-size: 16px;
+}
+.toggle-password-visibility:hover {
+    color: #28B4B6; /* MÀU: Xanh ngọc */
+}
+
+.form-options {
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+.forgot-password-link {
+    font-size: 13px;
+    color: #555;
+    text-decoration: none;
+}
+.forgot-password-link:hover {
+    color: #28B4B6; /* MÀU: Xanh ngọc */
+    text-decoration: underline;
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 12px;
+    background-color: #333A45; /* MÀU: Đen/Xám đậm từ Figma */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.btn-submit:hover {
+    background-color: #222831; /* MÀU: Đậm hơn khi hover */
+}
+
+.auth-switch {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 14px;
+    color: #555;
+}
+.auth-switch a {
+    color: #28B4B6; /* MÀU: Xanh ngọc */
+    font-weight: 500;
+    text-decoration: none;
+}
+.auth-switch a:hover {
+    text-decoration: underline;
+}
+
+/* Form Error Messages (cho JavaScript validation) */
+.form-error-message {
+    font-size: 12px;
+    color: #e74c3c; /* Màu đỏ cho lỗi */
+    margin-top: 5px;
+    display: none; /* Ẩn ban đầu */
+}
+.form-group input.error { /* Khi input có lỗi */
+    border-color: #e74c3c !important;
+}
+.form-group input.error:focus {
+    box-shadow: 0 0 0 0.2rem rgba(231, 76, 60, 0.25);
+}
+
+.form-group.terms-agreement {
+    display: flex;
+    align-items: center;
+}
+.form-group.terms-agreement input[type="checkbox"] {
+    margin-right: 8px;
+    width: auto; /* Reset width cho checkbox */
+    accent-color: #28B4B6; /* MÀU: Xanh ngọc cho checkbox */
+}
+
+
+/* Responsive for Auth Pages */
+@media (max-width: 575.98px) {
+    .auth-page {
+        padding: 20px 0;
+    }
+    .auth-form-container {
+        padding: 20px 25px;
+        margin: 0 15px; /* Thêm margin để không sát viền màn hình */
+    }
+    .auth-title {
+        font-size: 22px;
+    }
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group input[type="tel"],
+    .form-group input[type="password"] {
+        padding: 10px 12px;
+        font-size: 14px;
+    }
+    .btn-submit {
+        padding: 10px;
+        font-size: 15px;
+    }
+}

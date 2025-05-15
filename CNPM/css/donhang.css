@@ -1,0 +1,224 @@
+/* Styles for Order History Page */
+
+.order-history-page .container {
+    padding-top: 30px;
+    padding-bottom: 40px;
+}
+
+.page-title { /* Kế thừa từ style.css hoặc định nghĩa lại nếu cần */
+    text-align: left; /* Căn trái tiêu đề trang */
+    margin-bottom: 25px;
+    font-size: 24px;
+}
+
+.order-filters {
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 6px;
+    border: 1px solid #e0e0e0;
+}
+
+.order-filters label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #444;
+}
+
+.order-filters select {
+    padding: 8px 12px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    min-width: 200px;
+}
+
+.order-list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Khoảng cách giữa các order card */
+}
+
+.order-card {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    overflow: hidden; /* Để bo tròn có tác dụng với header */
+}
+
+.order-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 18px;
+    background-color: #f9f9f9; /* Nền cho header của card */
+    border-bottom: 1px solid #e0e0e0;
+    font-size: 14px;
+}
+.order-id strong {
+    color: #333;
+}
+.order-date {
+    color: #777;
+}
+.order-status {
+    padding: 4px 10px;
+    border-radius: 15px; /* Bo tròn cho tag trạng thái */
+    font-size: 12px;
+    font-weight: 500;
+    color: #fff;
+    text-transform: capitalize;
+}
+.status-delivered { background-color: #28a745; } /* Xanh lá */
+.status-shipped { background-color: #17a2b8; } /* Xanh dương nhạt */
+.status-processing { background-color: #ffc107; color: #333; } /* Vàng */
+.status-pending { background-color: #6c757d; } /* Xám */
+.status-cancelled { background-color: #dc3545; } /* Đỏ */
+
+
+.order-card-body {
+    padding: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.order-item-preview {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.order-item-preview img {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+    border: 1px solid #eee;
+    border-radius: 4px;
+}
+.order-item-preview span {
+    font-size: 13px;
+    color: #777;
+}
+
+.order-total {
+    font-size: 15px;
+    color: #333;
+}
+.order-total strong {
+    font-weight: 700;
+    color: #e74c3c; /* MÀU: Màu giá */
+}
+
+.order-card-footer {
+    padding: 12px 18px;
+    background-color: #f9f9f9;
+    border-top: 1px solid #e0e0e0;
+    text-align: right;
+}
+
+.btn-view-detail {
+    padding: 8px 18px;
+    background-color: #28B4B6; /* MÀU: Xanh ngọc */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+}
+.btn-view-detail:hover {
+    background-color: #209092; /* MÀU: Xanh ngọc đậm hơn */
+}
+
+/* No Orders State */
+.no-orders {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+}
+.no-order-image {
+    max-width: 120px;
+    margin: 0 auto 20px auto;
+}
+.no-orders h2 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+}
+.no-orders p {
+    font-size: 15px;
+    color: #777;
+    margin-bottom: 25px;
+}
+.btn-shop-now {
+    padding: 10px 25px;
+    background-color: #28B4B6; /* MÀU: Xanh ngọc */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+.btn-shop-now:hover {
+    background-color: #209092;
+}
+
+/* Pagination (Kế thừa từ category.css hoặc style.css nếu đã có) */
+.order-history-page .pagination-container {
+    margin-top: 30px;
+    /* Style pagination nếu cần thiết, ví dụ: */
+    /* display: flex; */
+    /* justify-content: center; */
+}
+
+
+/* Responsive for Order History Page */
+@media (max-width: 767.98px) {
+    .page-title {
+        font-size: 22px;
+    }
+    .order-filters {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .order-filters select {
+        width: 100%;
+    }
+    .order-card-header, .order-card-body {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    .order-status {
+        align-self: flex-start; /* Đảm bảo tag trạng thái không bị kéo dài */
+        margin-top: 5px;
+    }
+    .order-card-footer {
+        text-align: center;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .order-item-preview img {
+        width: 35px;
+        height: 35px;
+    }
+    .order-item-preview span {
+        font-size: 12px;
+    }
+    .order-total {
+        font-size: 14px;
+    }
+    .btn-view-detail {
+        width: 100%;
+        padding: 10px;
+    }
+}

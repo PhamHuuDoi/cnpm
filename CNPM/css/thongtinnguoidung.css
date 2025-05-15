@@ -1,0 +1,194 @@
+/* Styles for User Profile Page */
+
+.user-profile-page .container {
+    padding-top: 30px;
+    padding-bottom: 40px;
+}
+
+.page-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.profile-form-container {
+    max-width: 700px; /* Chiều rộng tối đa của form */
+    margin: 0 auto; /* Căn giữa form */
+    background-color: #f9f9f9; /* Nền xám nhạt cho form */
+    padding: 30px 35px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.form-group-display {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee; /* Đường kẻ phân cách nhẹ */
+}
+.form-group-display:last-of-type { /* Bỏ border cho group cuối cùng trước nút */
+    /* border-bottom: none; */ /* Hoặc giữ lại nếu muốn */
+}
+
+
+.form-group-display label {
+    flex-basis: 150px; /* Chiều rộng cố định cho label */
+    font-size: 15px;
+    font-weight: 500;
+    color: #444;
+    margin-right: 15px;
+}
+
+.form-group-display input[type="text"],
+.form-group-display input[type="email"],
+.form-group-display input[type="tel"],
+.form-group-display input[type="password"],
+.form-group-display textarea {
+    flex-grow: 1;
+    padding: 10px 12px;
+    font-size: 15px;
+    border: 1px solid #ddd; /* Viền mặc định khi readonly */
+    border-radius: 5px;
+    background-color: #fff; /* Nền trắng cho input */
+    color: #333;
+    outline: none;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.form-group-display input[readonly],
+.form-group-display textarea[readonly] {
+    background-color: #f5f5f5; /* Nền xám hơn khi chỉ đọc */
+    border-color: #e0e0e0;
+    cursor: default;
+    color: #555;
+}
+/* Khi input được phép chỉnh sửa (JS sẽ thêm class 'editable') */
+.form-group-display input.editable,
+.form-group-display textarea.editable {
+    background-color: #fff;
+    border-color: #28B4B6; /* MÀU: Xanh ngọc khi có thể sửa */
+    cursor: text;
+}
+.form-group-display input.editable:focus,
+.form-group-display textarea.editable:focus {
+    box-shadow: 0 0 0 0.2rem rgba(40, 180, 182, 0.25);
+}
+
+
+.form-group-display textarea {
+    resize: vertical; /* Cho phép thay đổi chiều cao textarea */
+    min-height: 60px;
+}
+
+.edit-icon {
+    margin-left: 10px;
+    color: #888;
+    cursor: pointer;
+    font-size: 14px;
+}
+.edit-icon:hover {
+    color: #28B4B6; /* MÀU: Xanh ngọc */
+}
+
+.change-password-link {
+    margin-left: 10px;
+    font-size: 13px;
+    color: #007bff; /* MÀU: Xanh dương cho link đổi mật khẩu */
+    text-decoration: none;
+}
+.change-password-link:hover {
+    text-decoration: underline;
+}
+
+.profile-actions {
+    margin-top: 30px;
+    text-align: right; /* Căn các nút sang phải */
+    display: flex;
+    justify-content: flex-end; /* Căn các nút sang phải */
+    gap: 10px;
+}
+
+.profile-actions .btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-edit {
+    background-color: #6c757d; /* Màu xám cho nút chỉnh sửa */
+    color: #fff;
+}
+.btn-edit:hover {
+    background-color: #5a6268;
+}
+
+.btn-save {
+    background-color: #28a745; /* Màu xanh lá cho nút lưu */
+    color: #fff;
+}
+.btn-save:hover {
+    background-color: #218838;
+}
+
+.btn-cancel {
+    background-color: #dc3545; /* Màu đỏ cho nút hủy */
+    color: #fff;
+}
+.btn-cancel:hover {
+    background-color: #c82333;
+}
+
+
+/* Responsive for User Profile Page */
+@media (max-width: 767.98px) {
+    .page-title {
+        font-size: 24px;
+    }
+    .profile-form-container {
+        padding: 20px 25px;
+    }
+    .form-group-display {
+        flex-direction: column; /* Label ở trên, input ở dưới */
+        align-items: flex-start;
+        border-bottom: none; /* Bỏ border bottom khi xuống dòng */
+        padding-bottom: 0;
+    }
+    .form-group-display label {
+        flex-basis: auto;
+        margin-bottom: 8px;
+        margin-right: 0;
+    }
+    .form-group-display input[type="text"],
+    .form-group-display input[type="email"],
+    .form-group-display input[type="tel"],
+    .form-group-display input[type="password"],
+    .form-group-display textarea {
+        width: 100%; /* Input chiếm toàn bộ chiều rộng */
+    }
+    .edit-icon, .change-password-link {
+        margin-left: 0;
+        margin-top: 8px; /* Tạo khoảng cách khi xuống dòng */
+        align-self: flex-start; /* Căn trái icon/link */
+    }
+    .profile-actions {
+        flex-direction: column; /* Nút xuống dòng */
+        align-items: stretch; /* Nút chiếm toàn bộ chiều rộng */
+    }
+    .profile-actions .btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .profile-form-container {
+        padding: 20px;
+    }
+}
