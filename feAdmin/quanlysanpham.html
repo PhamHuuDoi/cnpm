@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản Lý Sản Phẩm - Admin</title>
+    <link rel="stylesheet" href="css/quanlysanpham.css">
+    <!-- Link đến thư viện icon nếu cần, ví dụ Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="admin-panel">
+        <header class="top-nav">
+            <div class="logo-container">
+                <img src="https://via.placeholder.com/40x40?text=LOGO" alt="Logo" class="logo-img">
+            </div>
+            <div class="menu-search">
+                <button class="icon-button" aria-label="Menu"><i class="fas fa-bars"></i></button>
+                <button class="icon-button" aria-label="Search"><i class="fas fa-search"></i></button>
+            </div>
+            <div class="user-actions">
+                <button class="logout-button">
+                    <i class="fas fa-sign-out-alt"></i> Đăng xuất
+                </button>
+                <div class="user-profile">
+                    <span>Z</span>
+                    <i class="fas fa-caret-down"></i>
+                </div>
+            </div>
+        </header>
+
+        <div class="main-layout">
+            <aside class="sidebar">
+                <nav>
+                    <section class="sidebar-section">
+                        <h3>Chung</h3>
+                        <ul>
+                            <li><a href="themsanpham.html"><i class="fas fa-plus-circle"></i> Thêm sản phẩm</a></li>
+                            <li><a href="themdanhmuc.html"><i class="fas fa-plus-square"></i> Thêm danh mục</a></li>
+                        </ul>
+                    </section>
+                    <section class="sidebar-section">
+                        <h3>Quản lý</h3>
+                        <ul>
+                            <li class="active"><a href="#"><i class="fas fa-box-open"></i> Sản phẩm</a></li>
+                            <li><a href="quanlydanhmuc.html"><i class="fas fa-link"></i> Danh mục</a></li>
+                            <li><a href="quanlytaikhoan.html"><i class="fas fa-users"></i> Tài khoản</a></li>
+                            <li><a href="quanlydonhang.html"><i class="fas fa-receipt"></i> Đơn hàng</a></li>
+                            <li><a href="thongke.html"><i class="fas fa-chart-line"></i> Thống kê</a></li>
+                        </ul>
+                    </section>
+                </nav>
+            </aside>
+
+            <main class="main-content">
+                <h1>Danh sách sản phẩm</h1>
+                <div class="product-table-container">
+                    <table class="product-table">
+                        <thead>
+                            <tr>
+                                <th>Hình ảnh</th>
+                                <th>Tên sản phẩm</th>
+                                <th>Hãng</th>
+                                <th>Giá</th>
+                                <th>Số lượng</th>
+                                <th>Thao tác</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Dữ liệu mẫu sản phẩm -->
+                            <tr>
+                                <td><img src="https://via.placeholder.com/50x50?text=P1" alt="Sản phẩm 1" class="product-image-thumbnail"></td>
+                                <td>Chuột không dây DAREUE EM901 RGB WHITE</td>
+                                <td>DAREUE</td>
+                                <td class="price">480.000₫ <del>500.000₫</del></td>
+                                <td>
+                                    <div class="quantity-control">
+                                        <button class="quantity-btn minus-btn" data-id="1">-</button>
+                                        <input type="number" value="23" min="0" class="quantity-input" data-id="1" readonly>
+                                        <button class="quantity-btn plus-btn" data-id="1">+</button>
+                                    </div>
+                                </td>
+                                <td><button class="delete-btn" data-id="1"><i class="fas fa-times"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td><img src="https://via.placeholder.com/50x50?text=P2" alt="Sản phẩm 2" class="product-image-thumbnail"></td>
+                                <td>Chuột Logitech G502 X Plus LightSpeed Black</td>
+                                <td>Logitech</td>
+                                <td class="price">3.020.000₫ <del>3.500.000₫</del></td>
+                                <td>
+                                    <div class="quantity-control">
+                                        <button class="quantity-btn minus-btn" data-id="2">-</button>
+                                        <input type="number" value="16" min="0" class="quantity-input" data-id="2" readonly>
+                                        <button class="quantity-btn plus-btn" data-id="2">+</button>
+                                    </div>
+                                </td>
+                                <td><button class="delete-btn" data-id="2"><i class="fas fa-times"></i></button></td>
+                            </tr>
+                             <tr>
+                                <td><img src="https://via.placeholder.com/50x50?text=P3" alt="Sản phẩm 3" class="product-image-thumbnail"></td>
+                                <td>Bàn phím AULA F75 KĐ Gradient/Reaper switch</td>
+                                <td>AULA</td>
+                                <td class="price">1.199.000₫ <del>1.299.000₫</del></td>
+                                <td>
+                                    <div class="quantity-control">
+                                        <button class="quantity-btn minus-btn" data-id="3">-</button>
+                                        <input type="number" value="67" min="0" class="quantity-input" data-id="3" readonly>
+                                        <button class="quantity-btn plus-btn" data-id="3">+</button>
+                                    </div>
+                                </td>
+                                <td><button class="delete-btn" data-id="3"><i class="fas fa-times"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td><img src="https://via.placeholder.com/50x50?text=P4" alt="Sản phẩm 4" class="product-image-thumbnail"></td>
+                                <td>Bàn phím AKKO 5088B The Kings Avatar Ye Xiu V3 Pano Pro switch</td>
+                                <td>AKKO</td>
+                                <td class="price">2.850.000₫</td>
+                                <td>
+                                    <div class="quantity-control">
+                                        <button class="quantity-btn minus-btn" data-id="4">-</button>
+                                        <input type="number" value="55" min="0" class="quantity-input" data-id="4" readonly>
+                                        <button class="quantity-btn plus-btn" data-id="4">+</button>
+                                    </div>
+                                </td>
+                                <td><button class="delete-btn" data-id="4"><i class="fas fa-times"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td><img src="https://via.placeholder.com/50x50?text=P5" alt="Sản phẩm 5" class="product-image-thumbnail"></td>
+                                <td>Tai nghe Edifier không dây W820BT Pro ivory</td>
+                                <td>Edifier</td>
+                                <td class="price">1.190.000₫</td>
+                                <td>
+                                    <div class="quantity-control">
+                                        <button class="quantity-btn minus-btn" data-id="5">-</button>
+                                        <input type="number" value="47" min="0" class="quantity-input" data-id="5" readonly>
+                                        <button class="quantity-btn plus-btn" data-id="5">+</button>
+                                    </div>
+                                </td>
+                                <td><button class="delete-btn" data-id="5"><i class="fas fa-times"></i></button></td>
+                            </tr>
+                            <!-- Thêm các dòng sản phẩm khác tại đây -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="pagination">
+                    <button class="page-btn prev-btn" disabled><i class="fas fa-chevron-left"></i> Trang trước</button>
+                    <button class="page-num active">1</button>
+                    <button class="page-num">2</button>
+                    <button class="page-num">...</button>
+                    <button class="page-btn next-btn">Trang kế <i class="fas fa-chevron-right"></i></button>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script src="quanlysanpham.js"></script>
+</body>
+</html>

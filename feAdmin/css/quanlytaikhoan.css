@@ -1,0 +1,366 @@
+/* Basic Reset & General Styles (Copy from previous CSS files) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+    line-height: 1.6;
+}
+
+.admin-panel {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Top Navigation (Same as previous pages) */
+.top-nav {
+    background-color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e0e0e0;
+    height: 60px;
+}
+
+.logo-container .logo-img {
+    height: 40px;
+    width: auto;
+}
+
+.menu-search .icon-button {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    color: #555;
+    cursor: pointer;
+    margin-right: 15px;
+}
+
+.user-actions {
+    display: flex;
+    align-items: center;
+}
+
+.logout-button {
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 15px;
+    font-size: 0.9rem;
+    color: #333;
+    display: flex;
+    align-items: center;
+}
+.logout-button i {
+    margin-right: 5px;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.user-profile span {
+    background-color: #007bff;
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+/* Main Layout (Same as previous pages) */
+.main-layout {
+    display: flex;
+    flex-grow: 1;
+}
+
+/* Sidebar (Same as previous pages, but active class will be on "Tài khoản") */
+.sidebar {
+    width: 240px;
+    background-color: #00bcd4;
+    color: white;
+    padding-top: 20px;
+    flex-shrink: 0;
+}
+
+.sidebar-section h3 {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    color: #f0f0f0;
+    background-color: #008fa1;
+}
+.sidebar-section:first-child h3 { /* "Chung" section */
+    background-color: #333;
+}
+.sidebar-section:nth-child(2) h3 { /* "Quản lý" section */
+    background-color: #4a5568; /* Darker grey for "Quản lý" title */
+}
+
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li a {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    color: white;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: background-color 0.2s ease;
+}
+
+.sidebar ul li a i {
+    margin-right: 10px;
+    width: 20px;
+    text-align: center;
+}
+
+.sidebar ul li a:hover {
+    background-color: #008fa1;
+}
+/* Active link in "Quản lý" section */
+.sidebar-section:nth-child(2) ul li.active a {
+    background-color: #007bff; /* Blue for active "Tài khoản" */
+}
+
+
+/* Main Content */
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: #fff;
+    overflow-y: auto;
+}
+
+.main-content h1 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center; /* Center title as per image */
+}
+
+/* Account Table Styles */
+.account-table-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    overflow-x: auto; /* For responsiveness on small screens */
+}
+
+.account-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem; /* Slightly smaller font for more columns */
+}
+
+.account-table th,
+.account-table td {
+    border: 1px solid #e0e0e0;
+    padding: 8px 10px; /* Adjust padding */
+    text-align: left;
+    vertical-align: middle;
+    white-space: nowrap; /* Prevent text wrapping in cells */
+}
+
+.account-table th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+}
+
+.account-table td:last-child,
+.account-table th:last-child {
+    text-align: center; /* Center delete button column */
+}
+
+/* Delete Header (for the "Xóa" toggle, if implemented fully) */
+.delete-header {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center content in header cell */
+    gap: 10px;
+}
+
+/* Basic switch style if you want to implement the toggle later */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 34px; /* Smaller switch */
+  height: 20px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 14px;
+  width: 14px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #dc3545; /* Red when active */
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #dc3545;
+}
+
+input:checked + .slider:before {
+  transform: translateX(14px);
+}
+
+.slider.round {
+  border-radius: 20px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+
+/* Delete Button (Same as previous pages) */
+.delete-btn {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 50%; /* Make it circular */
+    width: 28px; /* Slightly smaller */
+    height: 28px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    display: inline-flex; /* Use inline-flex for better centering */
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease;
+    padding: 0; /* Remove padding if icon is centered by flex */
+}
+.delete-btn:hover {
+    background-color: #c82333;
+}
+.delete-btn i {
+    line-height: 1;
+}
+
+/* Pagination Styles (Same as previous pages) */
+.pagination {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.page-btn,
+.page-num {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    color: #007bff;
+    padding: 8px 12px;
+    text-decoration: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+    font-size: 0.9rem;
+}
+.page-btn i {
+    margin: 0 3px;
+}
+
+.page-btn:hover,
+.page-num:hover {
+    background-color: #e9ecef;
+    border-color: #ced4da;
+}
+
+.page-num.active {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+    cursor: default;
+}
+
+.page-btn:disabled {
+    color: #6c757d;
+    cursor: not-allowed;
+    background-color: #e9ecef;
+}
+
+/* Responsive adjustments (basic) */
+@media (max-width: 992px) { /* Adjust breakpoint if needed */
+    .account-table th, .account-table td {
+        font-size: 0.8rem; /* Further reduce font size for more columns */
+        padding: 6px 8px;
+        white-space: normal; /* Allow wrapping on smaller screens */
+    }
+    .account-table th:nth-child(3), /* Email/SĐT */
+    .account-table td:nth-child(3),
+    .account-table th:nth-child(4), /* Mật khẩu */
+    .account-table td:nth-child(4),
+    .account-table th:nth-child(6), /* Địa chỉ */
+    .account-table td:nth-child(6) {
+        /* Optionally hide less critical columns on very small screens */
+        /* display: none; */
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: static;
+    }
+    .main-layout {
+        flex-direction: column;
+    }
+    .top-nav {
+        flex-wrap: wrap;
+        height: auto;
+        padding: 10px;
+    }
+    .menu-search {
+        order: -1;
+    }
+    .user-actions {
+        width: 100%;
+        justify-content: space-between;
+        margin-top: 10px;
+    }
+}

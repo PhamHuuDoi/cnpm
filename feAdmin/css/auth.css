@@ -1,0 +1,164 @@
+/* Auth Container (Login/Register) */
+.login-container, .register-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Để form không bị dính sát top nếu nội dung ít */
+    padding: 40px 20px;
+    min-height: calc(100vh - 150px); /* Chiều cao tối thiểu để đẩy form xuống nếu nội dung ít (150px là chiều cao ước tính của header + sub-header) */
+}
+
+.login-form-wrapper, .register-form-wrapper {
+    background-color: #fff;
+    padding: 30px 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 450px; /* Giới hạn chiều rộng form */
+    border: 1px solid #4dd0e1; /* Viền xanh cho form */
+}
+
+.login-form-wrapper h2, .register-form-wrapper h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #2c3e50;
+    font-size: 1.8em;
+}
+
+/* Form Elements */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #555;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group input[type="tel"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group input[type="password"]:focus,
+.form-group input[type="tel"]:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+/* Password visibility toggle */
+.password-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.password-wrapper input[type="password"],
+.password-wrapper input[type="text"] { /* For when type is changed by JS */
+    padding-right: 40px; /* Make space for the icon */
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #777;
+    font-size: 1.2em; /* Kích thước icon mắt */
+    background: none;
+    border: none;
+    padding: 5px;
+}
+.toggle-password:hover {
+    color: #3498db;
+}
+
+/* Form Options & Links */
+.form-options {
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+.forgot-password {
+    color: #3498db;
+    text-decoration: none;
+    font-size: 0.9em;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    width: 100%;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-align: center;
+}
+
+.btn-login, .btn-register {
+    background-color: #2c3e50; /* Màu nút chính (đen/xám đậm) */
+    color: #fff;
+}
+
+.btn-login:hover, .btn-register:hover {
+    background-color: #34495e; /* Màu đậm hơn khi hover */
+    transform: translateY(-2px);
+}
+
+/* Register/Login Link at bottom */
+.register-link, .login-link {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 0.95em;
+}
+
+.register-link p, .login-link p {
+    color: #555;
+}
+
+.register-link a, .login-link a {
+    color: #3498db;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.register-link a:hover, .login-link a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive adjustments for auth forms */
+@media (max-width: 768px) {
+    .login-form-wrapper, .register-form-wrapper {
+        margin: 20px; /* Thêm margin nếu cần trên mobile */
+        padding: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .login-form-wrapper h2, .register-form-wrapper h2 {
+        font-size: 1.5em;
+    }
+    .btn { /* Style cho nút trên mobile nếu cần */
+        font-size: 1em;
+    }
+}

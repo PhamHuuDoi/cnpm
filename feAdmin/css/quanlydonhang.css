@@ -1,4 +1,4 @@
-/* Basic Reset & General Styles (Copy from themsanpham.css or a common admin.css) */
+/* Basic Reset & General Styles (Copy from previous CSS files) */
 * {
     margin: 0;
     padding: 0;
@@ -89,7 +89,7 @@ body {
     flex-grow: 1;
 }
 
-/* Sidebar (Same as previous pages, but active class will be on "Danh mục") */
+/* Sidebar (Same as previous pages, but active class will be on "Đơn hàng") */
 .sidebar {
     width: 240px;
     background-color: #00bcd4;
@@ -138,7 +138,7 @@ body {
 }
 /* Active link in "Quản lý" section */
 .sidebar-section:nth-child(2) ul li.active a {
-    background-color: #007bff; /* Blue for active "Danh mục" */
+    background-color: #007bff; /* Blue for active "Đơn hàng" */
 }
 
 
@@ -154,10 +154,11 @@ body {
     font-size: 1.8rem;
     margin-bottom: 20px;
     color: #333;
+    text-align: center; /* Center title as per image */
 }
 
-/* Category Table Styles */
-.category-table-container {
+/* Order Table Styles */
+.order-table-container {
     background-color: #fff;
     padding: 20px;
     border-radius: 8px;
@@ -165,57 +166,105 @@ body {
     overflow-x: auto; /* For responsiveness on small screens */
 }
 
-.category-table {
+.order-table {
     width: 100%;
     border-collapse: collapse;
-    font-size: 0.9rem;
+    font-size: 0.85rem; /* Adjust font size as needed */
 }
 
-.category-table th,
-.category-table td {
+.order-table th,
+.order-table td {
     border: 1px solid #e0e0e0;
     padding: 10px 12px;
     text-align: left;
     vertical-align: middle;
 }
 
-.category-table th {
+.order-table th {
     background-color: #f8f9fa;
     font-weight: 600;
     white-space: nowrap;
 }
 
-.category-image-thumbnail {
-    width: 50px;
-    height: 50px;
-    object-fit: contain; /* Use 'contain' to see the whole image, 'cover' to fill */
-    border-radius: 4px;
-    border: 1px solid #eee;
+.order-table td.product-name-cell {
+    min-width: 250px; /* Give more space for product names */
+    white-space: normal; /* Allow product names to wrap */
 }
 
-/* Delete Button (Same as quanlysanpham.css) */
-.delete-btn {
-    background-color: #dc3545;
+.order-table td.price {
+    color: #dc3545; /* Red for price */
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+/* Status Control */
+.status-control {
+    position: relative; /* For dropdown positioning */
+    min-width: 150px; /* Ensure enough width for status button */
+}
+
+.status-btn {
+    background-color: #6c757d; /* Default grey */
     color: white;
     border: none;
-    border-radius: 50%; /* Make it circular */
-    width: 30px;
-    height: 30px;
+    border-radius: 4px;
+    padding: 6px 12px;
     cursor: pointer;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
+    text-align: left;
+    width: 100%;
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
     transition: background-color 0.2s ease;
 }
-.delete-btn:hover {
-    background-color: #c82333;
-}
-.delete-btn i {
-    line-height: 1; /* Helps center the icon */
+.status-btn i {
+    margin-left: 5px;
 }
 
-/* Pagination Styles (Same as quanlysanpham.css) */
+.status-btn.status-pending {
+    background-color: #ffc107; /* Yellow for pending */
+    color: #333;
+}
+.status-btn.status-processing {
+    background-color: #17a2b8; /* Teal for processing */
+}
+.status-btn.status-shipping {
+    background-color: #007bff; /* Blue for shipping */
+}
+.status-btn.status-delivered {
+    background-color: #28a745; /* Green for delivered */
+}
+.status-btn.status-cancelled {
+    background-color: #dc3545; /* Red for cancelled */
+}
+
+.status-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 10;
+    width: 100%;
+    padding: 5px 0;
+}
+
+.status-dropdown a {
+    display: block;
+    padding: 8px 12px;
+    text-decoration: none;
+    color: #333;
+    font-size: 0.8rem;
+}
+.status-dropdown a:hover {
+    background-color: #f0f0f0;
+}
+
+
+/* Pagination Styles (Same as previous pages) */
 .pagination {
     margin-top: 25px;
     display: flex;
@@ -259,7 +308,24 @@ body {
     background-color: #e9ecef;
 }
 
-/* Responsive adjustments (basic) */
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .order-table th, .order-table td {
+        font-size: 0.8rem;
+        padding: 8px 10px;
+    }
+    .order-table td.product-name-cell {
+        min-width: 200px;
+    }
+    .status-control {
+        min-width: 130px;
+    }
+    .status-btn {
+        font-size: 0.75rem;
+        padding: 5px 8px;
+    }
+}
+
 @media (max-width: 768px) {
     .sidebar {
         width: 100%;
@@ -282,8 +348,9 @@ body {
         justify-content: space-between;
         margin-top: 10px;
     }
-    .category-table th, .category-table td {
-        font-size: 0.8rem;
-        padding: 6px 8px;
+    /* Hide less critical columns on very small screens or allow more wrapping */
+    .order-table th:nth-child(3), /* Địa chỉ */
+    .order-table td:nth-child(3) {
+        /* display: none; */ /* Example: hide address */
     }
 }

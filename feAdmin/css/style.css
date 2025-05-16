@@ -1,0 +1,65 @@
+/* Reset CSS cơ bản */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f6; /* Màu nền chung cho body */
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Main Header */
+.main-header {
+    background-color: #2c3e50; /* Màu nền header chính (màu tối) */
+    padding: 10px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid #3498db; /* Đường viền màu xanh dương */
+}
+
+.logo-container .logo {
+    height: 50px; /* Điều chỉnh kích thước logo nếu cần */
+}
+
+.user-icon-container .user-icon {
+    color: #ecf0f1; /* Màu icon người dùng */
+    font-size: 1.8em; /* Kích thước icon */
+    text-decoration: none;
+}
+
+.user-icon-container .user-icon:hover {
+    color: #3498db;
+}
+
+/* Sub Header */
+.sub-header {
+    background-color: #4dd0e1; /* Màu xanh lam nhạt như trong ảnh */
+    color: #fff;
+    text-align: center;
+    padding: 15px 20px;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+/* Footer (Placeholder - bạn có thể thiết kế và thêm style sau) */
+/*
+.main-footer {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    text-align: center;
+    padding: 20px;
+    margin-top: auto; // Để footer dính xuống cuối nếu nội dung trang ngắn
+}
+*/
+
+/* Responsive adjustments for general layout */
+@media (max-width: 768px) {
+    .main-header {
+        padding: 10px 20px;
+    }
+}

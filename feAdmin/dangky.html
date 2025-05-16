@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Ký - Trang Quản Trị</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Bạn có thể thêm link tới thư viện icon nếu muốn, ví dụ Font Awesome -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> -->
+</head>
+<body>
+    <header class="main-header">
+        <div class="logo-container">
+            <img src="placeholder-logo.png" alt="ZOO Logo" class="logo">
+        </div>
+        <div class="user-icon-container">
+            <a href="#" class="user-icon">
+                <span>&#128100;</span>
+            </a>
+        </div>
+    </header>
+
+    <div class="sub-header">
+        <h1>Trang Quản trị của Admin hệ thống</h1>
+    </div>
+
+    <main class="register-container"> <!-- Đổi class container nếu muốn style riêng, nhưng hiện tại dùng chung -->
+        <div class="register-form-wrapper"> <!-- Đổi class wrapper nếu muốn style riêng -->
+            <h2>Đăng Ký</h2>
+            <form id="registerForm">
+                <div class="form-group">
+                    <label for="fullName">Họ và Tên</label>
+                    <input type="text" id="fullName" name="fullName" placeholder="Nhập họ và tên" required>
+                </div>
+                <div class="form-group">
+                    <label for="emailOrPhone">Email/ Số điện thoại</label>
+                    <input type="text" id="emailOrPhone" name="emailOrPhone" placeholder="Email hoặc Số điện thoại" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Mật Khẩu</label>
+                    <div class="password-wrapper">
+                        <input type="password" id="password" name="password" placeholder="Nhập mật khẩu" required>
+                        <button type="button" class="toggle-password" aria-label="Hiện/Ẩn mật khẩu">👁️</button>
+                        <!-- Hoặc dùng icon từ thư viện: <i class="fas fa-eye"></i> -->
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword">Xác nhận Mật Khẩu</label>
+                    <div class="password-wrapper">
+                        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Xác nhận lại mật khẩu" required>
+                        <button type="button" class="toggle-password" aria-label="Hiện/Ẩn mật khẩu">👁️</button>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-register">Đăng Ký</button>
+                <div class="login-link">
+                    <p>Đã có tài khoản? <a href="index.html">Đăng nhập</a></p>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

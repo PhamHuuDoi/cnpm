@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thêm Sản Phẩm - Admin</title>
+    <link rel="stylesheet" href="css/themsanpham.css">
+    <!-- Link đến thư viện icon nếu cần, ví dụ Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <div class="admin-panel">
+        <header class="top-nav">
+            <div class="logo-container">
+                <img src="https://via.placeholder.com/40x40?text=LOGO" alt="Logo" class="logo-img">
+                <!-- Hoặc <div class="logo-text">ZOO</div> -->
+            </div>
+            <div class="menu-search">
+                <button class="icon-button" aria-label="Menu"><i class="fas fa-bars"></i></button>
+                <button class="icon-button" aria-label="Search"><i class="fas fa-search"></i></button>
+            </div>
+            <div class="user-actions">
+                <button class="logout-button">
+                    <i class="fas fa-sign-out-alt"></i> Đăng xuất
+                </button>
+                <div class="user-profile">
+                    <span>Z</span>
+                    <i class="fas fa-caret-down"></i>
+                </div>
+            </div>
+        </header>
+
+        <div class="main-layout">
+            <aside class="sidebar">
+                <nav>
+                    <section class="sidebar-section">
+                        <h3>Chung</h3>
+                        <ul>
+                            <li class="active"><a href="themsanpham.html"><i class="fas fa-plus-circle"></i> Thêm sản phẩm</a></li>
+                            <li><a href="themdanhmuc.html"><i class="fas fa-plus-square"></i> Thêm danh mục</a></li>
+                        </ul>
+                    </section>
+                    <section class="sidebar-section">
+                        <h3>Quản lý</h3>
+                        <ul>
+                            <li><a href="quanlysanpham.html"><i class="fas fa-box-open"></i> Sản phẩm</a></li>
+                            <li><a href="quanlydanhmuc.html"><i class="fas fa-link"></i> Danh mục</a></li>
+                            <li><a href="quanlytaikhoan.html"><i class="fas fa-users"></i> Tài khoản</a></li>
+                            <li><a href="quanlydonhang.html"><i class="fas fa-receipt"></i> Đơn hàng</a></li>
+                            <li><a href="thongke.html"><i class="fas fa-chart-line"></i> Thống kê</a></li>
+                        </ul>
+                    </section>
+                </nav>
+            </aside>
+
+            <main class="main-content">
+                <div class="content-wrapper">
+                    <div class="form-container">
+                        <h1>Thêm sản phẩm</h1>
+                        <form id="addProductForm">
+                            <div class="form-group">
+                                <label for="productName">Tên sản phẩm</label>
+                                <input type="text" id="productName" name="productName" placeholder="Tên sản phẩm">
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group half-width">
+                                    <label for="productPrice">Giá bán</label>
+                                    <input type="text" id="productPrice" name="productPrice" placeholder="Giá bán">
+                                </div>
+                                <div class="form-group half-width">
+                                    <label for="productCategory">Danh mục sản phẩm</label>
+                                    <select id="productCategory" name="productCategory">
+                                        <option value="">Chọn danh mục</option>
+                                        <option value="category1">Danh mục 1</option>
+                                        <option value="category2">Danh mục 2</option>
+                                        <option value="category3">Danh mục 3</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="productDescription">Mô tả sản phẩm</label>
+                                <textarea id="productDescription" name="productDescription" rows="4"
+                                    placeholder="Mô tả sản phẩm"></textarea>
+                            </div>
+                            <div class="image-upload-container">
+                                <h2>Hình ảnh</h2>
+                                <div class="image-uploader">
+                                    <input type="file" id="productImage" name="productImage" accept="image/*"
+                                        style="display: none;">
+                                    <label for="productImage" class="upload-area">
+                                        <i class="fas fa-upload"></i>
+                                        <p>Tải ảnh lên</p>
+                                    </label>
+                                    <div class="image-preview" id="imagePreview" style="display:none;">
+                                        <img src="#" alt="Xem trước ảnh" id="previewImageTag">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-actions">
+                                <button type="button" class="btn btn-cancel">Hủy</button>
+                                <button type="submit" class="btn btn-save">Lưu</button>
+                            </div>
+                        </form>
+                    </div>
+
+
+                </div>
+            </main>
+        </div>
+    </div>
+    <script src="js/script.js"></script>a
+</body>
+
+</html>

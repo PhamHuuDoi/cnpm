@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản Lý Tài Khoản - Admin</title>
+    <link rel="stylesheet" href="css/quanlytaikhoan.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="admin-panel">
+        <header class="top-nav">
+            <div class="logo-container">
+                <img src="https://via.placeholder.com/40x40?text=LOGO" alt="Logo" class="logo-img">
+            </div>
+            <div class="menu-search">
+                <button class="icon-button" aria-label="Menu"><i class="fas fa-bars"></i></button>
+                <button class="icon-button" aria-label="Search"><i class="fas fa-search"></i></button>
+            </div>
+            <div class="user-actions">
+                <button class="logout-button">
+                    <i class="fas fa-sign-out-alt"></i> Đăng xuất
+                </button>
+                <div class="user-profile">
+                    <span>Z</span>
+                    <i class="fas fa-caret-down"></i>
+                </div>
+            </div>
+        </header>
+
+        <div class="main-layout">
+            <aside class="sidebar">
+                <nav>
+                    <section class="sidebar-section">
+                        <h3>Chung</h3>
+                        <ul>
+                            <li><a href="themsanpham.html"><i class="fas fa-plus-circle"></i> Thêm sản phẩm</a></li>
+                            <li><a href="themdanhmuc.html"><i class="fas fa-plus-square"></i> Thêm danh mục</a></li>
+                        </ul>
+                    </section>
+                    <section class="sidebar-section">
+                        <h3>Quản lý</h3>
+                        <ul>
+                            <li><a href="quanlysanpham.html"><i class="fas fa-box-open"></i> Sản phẩm</a></li>
+                            <li><a href="quanlydanhmuc.html"><i class="fas fa-link"></i> Danh mục</a></li>
+                            <li class="active"><a href="#"><i class="fas fa-users"></i> Tài khoản</a></li>
+                            <li><a href="quanlydonhang.html"><i class="fas fa-receipt"></i> Đơn hàng</a></li>
+                            <li><a href="thongke.html"><i class="fas fa-chart-line"></i> Thống kê</a></li>
+                        </ul>
+                    </section>
+                </nav>
+            </aside>
+
+            <main class="main-content">
+                <h1>Quản lý tài khoản</h1>
+                <div class="account-table-container">
+                    <table class="account-table">
+                        <thead>
+                            <tr>
+                                <th>Mã</th>
+                                <th>Họ Tên</th>
+                                <th>Email/SĐT</th>
+                                <th>Mật khẩu</th>
+                                <th>Vai Trò</th>
+                                <th>Địa chỉ</th>
+                                <th>
+                                    <div class="delete-header">
+                                        <span>Xóa</span>
+                                        <!-- This toggle might be for batch actions, simplified for now -->
+                                        <!-- <label class="switch">
+                                            <input type="checkbox" id="toggleAllDelete">
+                                            <span class="slider round"></span>
+                                        </label> -->
+                                    </div>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Dữ liệu mẫu tài khoản -->
+                            <tr>
+                                <td>ad01</td>
+                                <td>Nhân viên 1</td>
+                                <td>Ad01thezoo@gmail.com</td>
+                                <td>thezoo_ad01</td>
+                                <td>admin</td>
+                                <td>180 Cao Lỗ Quận 8 TP HCM</td>
+                                <td><button class="delete-btn" data-id="ad01"><i class="fas fa-times"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>ad02</td>
+                                <td>Nhân viên 2</td>
+                                <td>Ad02thezoo@gmail.com</td>
+                                <td>thezoo_ad02</td>
+                                <td>admin</td>
+                                <td>180 Cao Lỗ Quận 8 TP HCM</td>
+                                <td><button class="delete-btn" data-id="ad02"><i class="fas fa-times"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>us001</td>
+                                <td>Tâm Phan</td>
+                                <td>TamPhan@gmail.com</td>
+                                <td>tamphan01</td>
+                                <td>user</td>
+                                <td>181 Cao Lỗ Quận 8 TP HCM</td>
+                                <td><button class="delete-btn" data-id="us001"><i class="fas fa-times"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>us002</td>
+                                <td>Huy Gia</td>
+                                <td>Huygia@gmail.com</td>
+                                <td>huygia@12</td>
+                                <td>user</td>
+                                <td>182 Cao Lỗ Quận 8 TP HCM</td>
+                                <td><button class="delete-btn" data-id="us002"><i class="fas fa-times"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>us003</td>
+                                <td>Chí Huy</td>
+                                <td>DCHuy@gmail.com</td>
+                                <td>CCHuy012</td>
+                                <td>user</td>
+                                <td>182 Cao Lỗ Quận 8 TP HCM</td>
+                                <td><button class="delete-btn" data-id="us003"><i class="fas fa-times"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>us004</td>
+                                <td>Ngọc Khánh</td>
+                                <td>NgocKhanh@gmail.com</td>
+                                <td>Lngockhanh123</td>
+                                <td>user</td>
+                                <td>183 Cao Lỗ Quận 8 TP HCM</td>
+                                <td><button class="delete-btn" data-id="us004"><i class="fas fa-times"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>us005</td>
+                                <td>Minh Khang</td>
+                                <td>MinhKhang@gmail.com</td>
+                                <td>VMK124</td>
+                                <td>user</td>
+                                <td>184 Cao Lỗ Quận 8 TP HCM</td>
+                                <td><button class="delete-btn" data-id="us005"><i class="fas fa-times"></i></button></td>
+                            </tr>
+                             <tr>
+                                <td>us006</td>
+                                <td>Hữu Đạt</td>
+                                <td>huuDat@gmail.com</td>
+                                <td>huudat1233</td>
+                                <td>user</td>
+                                <td>185 Cao Lỗ Quận 8 TP HCM</td>
+                                <td><button class="delete-btn" data-id="us006"><i class="fas fa-times"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>us007</td>
+                                <td>Bảo Long</td>
+                                <td>BaoLong@gmail.com</td>
+                                <td>Baolong1233</td>
+                                <td>user</td>
+                                <td>186 Cao Lỗ Quận 8 TP HCM</td>
+                                <td><button class="delete-btn" data-id="us007"><i class="fas fa-times"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>us008</td>
+                                <td>Đăng Khoa</td>
+                                <td>DangKhoa@gmail.com</td>
+                                <td>Dangkhoa12387</td>
+                                <td>user</td>
+                                <td>186 Cao Lỗ Quận 8 TP HCM</td>
+                                <td><button class="delete-btn" data-id="us008"><i class="fas fa-times"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>us009</td>
+                                <td>Duy Khánh</td>
+                                <td>DuyKhanh@gmail.com</td>
+                                <td>Duykhanh123</td>
+                                <td>user</td>
+                                <td>186 Cao Lỗ Quận 8 TP HCM</td>
+                                <td><button class="delete-btn" data-id="us009"><i class="fas fa-times"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>us010</td>
+                                <td>Đức Hiệp</td>
+                                <td>DucHiep@gmail.com</td>
+                                <td>DucHiep123</td>
+                                <td>user</td>
+                                <td>187 Cao Lỗ Quận 8 TP HCM</td>
+                                <td><button class="delete-btn" data-id="us010"><i class="fas fa-times"></i></button></td>
+                            </tr>
+                            <!-- Thêm các dòng tài khoản khác tại đây -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="pagination">
+                    <button class="page-btn prev-btn" disabled><i class="fas fa-chevron-left"></i> Trang trước</button>
+                    <button class="page-num active">1</button>
+                    <button class="page-num">2</button>
+                    <button class="page-num">...</button>
+                    <button class="page-btn next-btn">Trang kế <i class="fas fa-chevron-right"></i></button>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>

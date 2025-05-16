@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản Lý Đơn Hàng - Admin</title>
+    <link rel="stylesheet" href="css/quanlydonhang.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="admin-panel">
+        <header class="top-nav">
+            <div class="logo-container">
+                <img src="https://via.placeholder.com/40x40?text=LOGO" alt="Logo" class="logo-img">
+            </div>
+            <div class="menu-search">
+                <button class="icon-button" aria-label="Menu"><i class="fas fa-bars"></i></button>
+                <button class="icon-button" aria-label="Search"><i class="fas fa-search"></i></button>
+            </div>
+            <div class="user-actions">
+                <button class="logout-button">
+                    <i class="fas fa-sign-out-alt"></i> Đăng xuất
+                </button>
+                <div class="user-profile">
+                    <span>Z</span>
+                    <i class="fas fa-caret-down"></i>
+                </div>
+            </div>
+        </header>
+
+        <div class="main-layout">
+            <aside class="sidebar">
+                <nav>
+                    <section class="sidebar-section">
+                        <h3>Chung</h3>
+                        <ul>
+                            <li><a href="themsanpham.html"><i class="fas fa-plus-circle"></i> Thêm sản phẩm</a></li>
+                            <li><a href="themdanhmuc.html"><i class="fas fa-plus-square"></i> Thêm danh mục</a></li>
+                        </ul>
+                    </section>
+                    <section class="sidebar-section">
+                        <h3>Quản lý</h3>
+                        <ul>
+                            <li><a href="quanlysanpham.html"><i class="fas fa-box-open"></i> Sản phẩm</a></li>
+                            <li><a href="quanlydanhmuc.html"><i class="fas fa-link"></i> Danh mục</a></li>
+                            <li><a href="quanlytaikhoan.html"><i class="fas fa-users"></i> Tài khoản</a></li>
+                            <li class="active"><a href="#"><i class="fas fa-receipt"></i> Đơn hàng</a></li>
+                            <li><a href="thongke.html"><i class="fas fa-chart-line"></i> Thống kê</a></li>
+                        </ul>
+                    </section>
+                </nav>
+            </aside>
+
+            <main class="main-content">
+                <h1>Quản lý đơn hàng</h1>
+                <div class="order-table-container">
+                    <table class="order-table">
+                        <thead>
+                            <tr>
+                                <th>ID đơn hàng</th>
+                                <th>Tên người nhận</th>
+                                <th>Địa chỉ</th>
+                                <th>Tên sản phẩm</th>
+                                <th>Số lượng</th>
+                                <th>Tổng tiền</th>
+                                <th>Trạng thái</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Dữ liệu mẫu đơn hàng -->
+                            <tr>
+                                <td>dh012</td>
+                                <td>Minh Khang</td>
+                                <td>184 Cao Lỗ Quận 8 TP HCM</td>
+                                <td class="product-name-cell">Card màn hình ASUS Dual Radeon RX 6600 V2 8GB GDDR6 (DUAL-RX6600-8G-V2)</td>
+                                <td>1</td>
+                                <td class="price">9.350.000₫</td>
+                                <td>
+                                    <div class="status-control">
+                                        <button class="status-btn status-pending" data-order-id="dh012">Chờ xác nhận <i class="fas fa-caret-down"></i></button>
+                                        <!-- Dropdown for status change would be populated by JS -->
+                                        <div class="status-dropdown" style="display:none;">
+                                            <a href="#" data-status="pending">Chờ xác nhận</a>
+                                            <a href="#" data-status="processing">Đang xử lý</a>
+                                            <a href="#" data-status="shipping">Đang giao</a>
+                                            <a href="#" data-status="delivered">Giao thành công</a>
+                                            <a href="#" data-status="cancelled">Đã hủy</a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>dh011</td>
+                                <td>Tâm Phan</td>
+                                <td>181 Cao Lỗ Quận 8 TP HCM</td>
+                                <td class="product-name-cell">Bộ tản nhiệt nước CPU ASUS ROG RYUJIN II 240 ARGB</td>
+                                <td>1</td>
+                                <td class="price">5.500.000₫</td>
+                                 <td>
+                                    <div class="status-control">
+                                        <button class="status-btn status-pending" data-order-id="dh011">Chờ xác nhận <i class="fas fa-caret-down"></i></button>
+                                        <div class="status-dropdown" style="display:none;">
+                                            <a href="#" data-status="pending">Chờ xác nhận</a>
+                                            <a href="#" data-status="processing">Đang xử lý</a>
+                                            <a href="#" data-status="shipping">Đang giao</a>
+                                            <a href="#" data-status="delivered">Giao thành công</a>
+                                            <a href="#" data-status="cancelled">Đã hủy</a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>dh010</td>
+                                <td>Huy Gia</td>
+                                <td>182 Cao Lỗ Quận 8 TP HCM</td>
+                                <td class="product-name-cell">Bàn phím HE MicoGeek FUN60 ProMax SP (Black) White Glare Magnetic Switch</td>
+                                <td>1</td>
+                                <td class="price">2.300.000₫</td>
+                                 <td>
+                                    <div class="status-control">
+                                        <button class="status-btn status-pending" data-order-id="dh010">Chờ xác nhận <i class="fas fa-caret-down"></i></button>
+                                        <div class="status-dropdown" style="display:none;">
+                                            <a href="#" data-status="pending">Chờ xác nhận</a>
+                                            <a href="#" data-status="processing">Đang xử lý</a>
+                                            <a href="#" data-status="shipping">Đang giao</a>
+                                            <a href="#" data-status="delivered">Giao thành công</a>
+                                            <a href="#" data-status="cancelled">Đã hủy</a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                             <tr>
+                                <td>dh009</td>
+                                <td>Chí Huy</td>
+                                <td>183 Cao Lỗ Quận 8 TP HCM</td>
+                                <td class="product-name-cell">Màn Hình Gaming ViewSonic XG2730-2K 27 Inch QHD IPS 240Hz 0.5ms</td>
+                                <td>1</td>
+                                <td class="price">9.250.000₫</td>
+                                 <td>
+                                    <div class="status-control">
+                                        <button class="status-btn status-delivered" data-order-id="dh009">Giao thành công <i class="fas fa-caret-down"></i></button>
+                                        <div class="status-dropdown" style="display:none;">
+                                            <a href="#" data-status="pending">Chờ xác nhận</a>
+                                            <a href="#" data-status="processing">Đang xử lý</a>
+                                            <a href="#" data-status="shipping">Đang giao</a>
+                                            <a href="#" data-status="delivered">Giao thành công</a>
+                                            <a href="#" data-status="cancelled">Đã hủy</a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <!-- Thêm các dòng đơn hàng khác tại đây -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="pagination">
+                    <button class="page-btn prev-btn" disabled><i class="fas fa-chevron-left"></i> Trang trước</button>
+                    <button class="page-num active">1</button>
+                    <button class="page-num">2</button>
+                    <button class="page-num">3</button>
+                    <button class="page-num">4</button>
+                    <button class="page-num">5</button>
+                    <button class="page-num">...</button>
+                    <button class="page-btn next-btn">Trang kế <i class="fas fa-chevron-right"></i></button>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>
